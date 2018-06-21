@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsywfh.McglJbxxZsMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsywfh.McglJbxxZs" >
+    <result column="NAMEID" property="nameid" jdbcType="VARCHAR" />
+    <result column="PRIPID" property="pripid" jdbcType="VARCHAR" />
+    <result column="NAMETYPE" property="nametype" jdbcType="CHAR" />
+    <result column="ENTTRA" property="enttra" jdbcType="VARCHAR" />
+    <result column="TRADPINY" property="tradpiny" jdbcType="VARCHAR" />
+    <result column="ENTNAME" property="entname" jdbcType="VARCHAR" />
+    <result column="ENTNAMESPELL" property="entnamespell" jdbcType="VARCHAR" />
+    <result column="ENTCAT" property="entcat" jdbcType="CHAR" />
+    <result column="ENTTYPE" property="enttype" jdbcType="VARCHAR" />
+    <result column="ORGFORM" property="orgform" jdbcType="VARCHAR" />
+    <result column="NAMEDISTRICT" property="namedistrict" jdbcType="VARCHAR" />
+    <result column="NAMEIND" property="nameind" jdbcType="VARCHAR" />
+    <result column="GRPSHFORM" property="grpshform" jdbcType="VARCHAR" />
+    <result column="DOMDISTRICT" property="domdistrict" jdbcType="VARCHAR" />
+    <result column="DOM" property="dom" jdbcType="VARCHAR" />
+    <result column="OPLOC" property="oploc" jdbcType="VARCHAR" />
+    <result column="ABUITEMCO" property="abuitemco" jdbcType="VARCHAR" />
+    <result column="CBUITEM" property="cbuitem" jdbcType="VARCHAR" />
+    <result column="BUSSCOPE" property="busscope" jdbcType="VARCHAR" />
+    <result column="CONGRO" property="congro" jdbcType="DECIMAL" />
+    <result column="CONGROCUR" property="congrocur" jdbcType="VARCHAR" />
+    <result column="CONGROUSD" property="congrousd" jdbcType="DECIMAL" />
+    <result column="FORSUBCONAMUSD" property="forsubconamusd" jdbcType="DECIMAL" />
+    <result column="REGCAP" property="regcap" jdbcType="DECIMAL" />
+    <result column="REGCAPCUR" property="regcapcur" jdbcType="VARCHAR" />
+    <result column="REGCAPUSD" property="regcapusd" jdbcType="DECIMAL" />
+    <result column="NAMESTATUS" property="namestatus" jdbcType="DECIMAL" />
+    <result column="SAVEPERFROM" property="saveperfrom" jdbcType="TIMESTAMP" />
+    <result column="SAVEPERTO" property="saveperto" jdbcType="TIMESTAMP" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="HKSIGN" property="hksign" jdbcType="VARCHAR" />
+    <result column="PREREGORG" property="preregorg" jdbcType="VARCHAR" />
+    <result column="LOCALADM" property="localadm" jdbcType="VARCHAR" />
+    <result column="APPRAUTH" property="apprauth" jdbcType="VARCHAR" />
+    <result column="APPRDATE" property="apprdate" jdbcType="TIMESTAMP" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="ISENTNAMEALT" property="isentnamealt" jdbcType="DECIMAL" />
+    <result column="ENTNAMEBEALT" property="entnamebealt" jdbcType="VARCHAR" />
+    <result column="CONTINENT" property="continent" jdbcType="CHAR" />
+    <result column="COUNTRY" property="country" jdbcType="VARCHAR" />
+    <result column="INDUSTRYPHY" property="industryphy" jdbcType="CHAR" />
+    <result column="INDUSTRYCO" property="industryco" jdbcType="VARCHAR" />
+    <result column="OPSCOTYPE" property="opscotype" jdbcType="VARCHAR" />
+    <result column="S_EXT_TIMESTAMP" property="sExtTimestamp" jdbcType="TIMESTAMP" />
+    <result column="APPRNO" property="apprno" jdbcType="VARCHAR" />
+    <result column="ISUSED" property="isused" jdbcType="CHAR" />
+    <result column="PROVINCE" property="province" jdbcType="VARCHAR" />
+    <result column="CITY" property="city" jdbcType="VARCHAR" />
+    <result column="COUNTY" property="county" jdbcType="VARCHAR" />
+    <result column="OPFYEARS" property="opfyears" jdbcType="DECIMAL" />
+    <result column="STREET" property="street" jdbcType="VARCHAR" />
+    <result column="ROAD" property="road" jdbcType="VARCHAR" />
+    <result column="DOORPLATE" property="doorplate" jdbcType="VARCHAR" />
+    <result column="GRPNAMEBEALT" property="grpnamebealt" jdbcType="VARCHAR" />
+    <result column="GRPSHFORMBEALT" property="grpshformbealt" jdbcType="VARCHAR" />
+    <result column="GRPNAME" property="grpname" jdbcType="VARCHAR" />
+    <result column="OLD_PRIPID" property="oldPripid" jdbcType="VARCHAR" />
+    <result column="GTZX_OPETYPE" property="gtzxOpetype" jdbcType="VARCHAR" />
+    <result column="CERNO" property="cerno" jdbcType="VARCHAR" />
+    <result column="GRPPNAME" property="grppname" jdbcType="VARCHAR" />
+    <result column="ACCDATE" property="accdate" jdbcType="TIMESTAMP" />
+    <result column="APPTYPE" property="apptype" jdbcType="CHAR" />
+    <result column="RESTLEVEL" property="restlevel" jdbcType="CHAR" />
+    <result column="BUSSCOPE1" property="busscope1" jdbcType="VARCHAR" />
+    <result column="BUSSCOPE2" property="busscope2" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="FGSTYPE" property="fgstype" jdbcType="VARCHAR" />
+    <result column="REGTYPE" property="regtype" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    NAMEID, PRIPID, NAMETYPE, ENTTRA, TRADPINY, ENTNAME, ENTNAMESPELL, ENTCAT, ENTTYPE, 
+    ORGFORM, NAMEDISTRICT, NAMEIND, GRPSHFORM, DOMDISTRICT, DOM, OPLOC, ABUITEMCO, CBUITEM, 
+    BUSSCOPE, CONGRO, CONGROCUR, CONGROUSD, FORSUBCONAMUSD, REGCAP, REGCAPCUR, REGCAPUSD, 
+    NAMESTATUS, SAVEPERFROM, SAVEPERTO, NAME, TEL, HKSIGN, PREREGORG, LOCALADM, APPRAUTH, 
+    APPRDATE, REMARK, ISENTNAMEALT, ENTNAMEBEALT, CONTINENT, COUNTRY, INDUSTRYPHY, INDUSTRYCO, 
+    OPSCOTYPE, S_EXT_TIMESTAMP, APPRNO, ISUSED, PROVINCE, CITY, COUNTY, OPFYEARS, STREET, 
+    ROAD, DOORPLATE, GRPNAMEBEALT, GRPSHFORMBEALT, GRPNAME, OLD_PRIPID, GTZX_OPETYPE, 
+    CERNO, GRPPNAME, ACCDATE, APPTYPE, RESTLEVEL, BUSSCOPE1, BUSSCOPE2, USER_ID, FGSTYPE, 
+    REGTYPE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsywfh.McglJbxxZsExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from GSYWFH.MCGL_JBXX_ZS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsywfh.McglJbxxZsExample" >
+    delete from GSYWFH.MCGL_JBXX_ZS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsywfh.McglJbxxZs" >
+    insert into GSYWFH.MCGL_JBXX_ZS (NAMEID, PRIPID, NAMETYPE, 
+      ENTTRA, TRADPINY, ENTNAME, 
+      ENTNAMESPELL, ENTCAT, ENTTYPE, 
+      ORGFORM, NAMEDISTRICT, NAMEIND, 
+      GRPSHFORM, DOMDISTRICT, DOM, 
+      OPLOC, ABUITEMCO, CBUITEM, 
+      BUSSCOPE, CONGRO, CONGROCUR, 
+      CONGROUSD, FORSUBCONAMUSD, REGCAP, 
+      REGCAPCUR, REGCAPUSD, NAMESTATUS, 
+      SAVEPERFROM, SAVEPERTO, NAME, 
+      TEL, HKSIGN, PREREGORG, 
+      LOCALADM, APPRAUTH, APPRDATE, 
+      REMARK, ISENTNAMEALT, ENTNAMEBEALT, 
+      CONTINENT, COUNTRY, INDUSTRYPHY, 
+      INDUSTRYCO, OPSCOTYPE, S_EXT_TIMESTAMP, 
+      APPRNO, ISUSED, PROVINCE, 
+      CITY, COUNTY, OPFYEARS, 
+      STREET, ROAD, DOORPLATE, 
+      GRPNAMEBEALT, GRPSHFORMBEALT, GRPNAME, 
+      OLD_PRIPID, GTZX_OPETYPE, CERNO, 
+      GRPPNAME, ACCDATE, APPTYPE, 
+      RESTLEVEL, BUSSCOPE1, BUSSCOPE2, 
+      USER_ID, FGSTYPE, REGTYPE
+      )
+    values (#{nameid,jdbcType=VARCHAR}, #{pripid,jdbcType=VARCHAR}, #{nametype,jdbcType=CHAR}, 
+      #{enttra,jdbcType=VARCHAR}, #{tradpiny,jdbcType=VARCHAR}, #{entname,jdbcType=VARCHAR}, 
+      #{entnamespell,jdbcType=VARCHAR}, #{entcat,jdbcType=CHAR}, #{enttype,jdbcType=VARCHAR}, 
+      #{orgform,jdbcType=VARCHAR}, #{namedistrict,jdbcType=VARCHAR}, #{nameind,jdbcType=VARCHAR}, 
+      #{grpshform,jdbcType=VARCHAR}, #{domdistrict,jdbcType=VARCHAR}, #{dom,jdbcType=VARCHAR}, 
+      #{oploc,jdbcType=VARCHAR}, #{abuitemco,jdbcType=VARCHAR}, #{cbuitem,jdbcType=VARCHAR}, 
+      #{busscope,jdbcType=VARCHAR}, #{congro,jdbcType=DECIMAL}, #{congrocur,jdbcType=VARCHAR}, 
+      #{congrousd,jdbcType=DECIMAL}, #{forsubconamusd,jdbcType=DECIMAL}, #{regcap,jdbcType=DECIMAL}, 
+      #{regcapcur,jdbcType=VARCHAR}, #{regcapusd,jdbcType=DECIMAL}, #{namestatus,jdbcType=DECIMAL}, 
+      #{saveperfrom,jdbcType=TIMESTAMP}, #{saveperto,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{hksign,jdbcType=VARCHAR}, #{preregorg,jdbcType=VARCHAR}, 
+      #{localadm,jdbcType=VARCHAR}, #{apprauth,jdbcType=VARCHAR}, #{apprdate,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{isentnamealt,jdbcType=DECIMAL}, #{entnamebealt,jdbcType=VARCHAR}, 
+      #{continent,jdbcType=CHAR}, #{country,jdbcType=VARCHAR}, #{industryphy,jdbcType=CHAR}, 
+      #{industryco,jdbcType=VARCHAR}, #{opscotype,jdbcType=VARCHAR}, #{sExtTimestamp,jdbcType=TIMESTAMP}, 
+      #{apprno,jdbcType=VARCHAR}, #{isused,jdbcType=CHAR}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{opfyears,jdbcType=DECIMAL}, 
+      #{street,jdbcType=VARCHAR}, #{road,jdbcType=VARCHAR}, #{doorplate,jdbcType=VARCHAR}, 
+      #{grpnamebealt,jdbcType=VARCHAR}, #{grpshformbealt,jdbcType=VARCHAR}, #{grpname,jdbcType=VARCHAR}, 
+      #{oldPripid,jdbcType=VARCHAR}, #{gtzxOpetype,jdbcType=VARCHAR}, #{cerno,jdbcType=VARCHAR}, 
+      #{grppname,jdbcType=VARCHAR}, #{accdate,jdbcType=TIMESTAMP}, #{apptype,jdbcType=CHAR}, 
+      #{restlevel,jdbcType=CHAR}, #{busscope1,jdbcType=VARCHAR}, #{busscope2,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{fgstype,jdbcType=VARCHAR}, #{regtype,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsywfh.McglJbxxZs" >
+    insert into GSYWFH.MCGL_JBXX_ZS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="nameid != null" >
+        NAMEID,
+      </if>
+      <if test="pripid != null" >
+        PRIPID,
+      </if>
+      <if test="nametype != null" >
+        NAMETYPE,
+      </if>
+      <if test="enttra != null" >
+        ENTTRA,
+      </if>
+      <if test="tradpiny != null" >
+        TRADPINY,
+      </if>
+      <if test="entname != null" >
+        ENTNAME,
+      </if>
+      <if test="entnamespell != null" >
+        ENTNAMESPELL,
+      </if>
+      <if test="entcat != null" >
+        ENTCAT,
+      </if>
+      <if test="enttype != null" >
+        ENTTYPE,
+      </if>
+      <if test="orgform != null" >
+        ORGFORM,
+      </if>
+      <if test="namedistrict != null" >
+        NAMEDISTRICT,
+      </if>
+      <if test="nameind != null" >
+        NAMEIND,
+      </if>
+      <if test="grpshform != null" >
+        GRPSHFORM,
+      </if>
+      <if test="domdistrict != null" >
+        DOMDISTRICT,
+      </if>
+      <if test="dom != null" >
+        DOM,
+      </if>
+      <if test="oploc != null" >
+        OPLOC,
+      </if>
+      <if test="abuitemco != null" >
+        ABUITEMCO,
+      </if>
+      <if test="cbuitem != null" >
+        CBUITEM,
+      </if>
+      <if test="busscope != null" >
+        BUSSCOPE,
+      </if>
+      <if test="congro != null" >
+        CONGRO,
+      </if>
+      <if test="congrocur != null" >
+        CONGROCUR,
+      </if>
+      <if test="congrousd != null" >
+        CONGROUSD,
+      </if>
+      <if test="forsubconamusd != null" >
+        FORSUBCONAMUSD,
+      </if>
+      <if test="regcap != null" >
+        REGCAP,
+      </if>
+      <if test="regcapcur != null" >
+        REGCAPCUR,
+      </if>
+      <if test="regcapusd != null" >
+        REGCAPUSD,
+      </if>
+      <if test="namestatus != null" >
+        NAMESTATUS,
+      </if>
+      <if test="saveperfrom != null" >
+        SAVEPERFROM,
+      </if>
+      <if test="saveperto != null" >
+        SAVEPERTO,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="hksign != null" >
+        HKSIGN,
+      </if>
+      <if test="preregorg != null" >
+        PREREGORG,
+      </if>
+      <if test="localadm != null" >
+        LOCALADM,
+      </if>
+      <if test="apprauth != null" >
+        APPRAUTH,
+      </if>
+      <if test="apprdate != null" >
+        APPRDATE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="isentnamealt != null" >
+        ISENTNAMEALT,
+      </if>
+      <if test="entnamebealt != null" >
+        ENTNAMEBEALT,
+      </if>
+      <if test="continent != null" >
+        CONTINENT,
+      </if>
+      <if test="country != null" >
+        COUNTRY,
+      </if>
+      <if test="industryphy != null" >
+        INDUSTRYPHY,
+      </if>
+      <if test="industryco != null" >
+        INDUSTRYCO,
+      </if>
+      <if test="opscotype != null" >
+        OPSCOTYPE,
+      </if>
+      <if test="sExtTimestamp != null" >
+        S_EXT_TIMESTAMP,
+      </if>
+      <if test="apprno != null" >
+        APPRNO,
+      </if>
+      <if test="isused != null" >
+        ISUSED,
+      </if>
+      <if test="province != null" >
+        PROVINCE,
+      </if>
+      <if test="city != null" >
+        CITY,
+      </if>
+      <if test="county != null" >
+        COUNTY,
+      </if>
+      <if test="opfyears != null" >
+        OPFYEARS,
+      </if>
+      <if test="street != null" >
+        STREET,
+      </if>
+      <if test="road != null" >
+        ROAD,
+      </if>
+      <if test="doorplate != null" >
+        DOORPLATE,
+      </if>
+      <if test="grpnamebealt != null" >
+        GRPNAMEBEALT,
+      </if>
+      <if test="grpshformbealt != null" >
+        GRPSHFORMBEALT,
+      </if>
+      <if test="grpname != null" >
+        GRPNAME,
+      </if>
+      <if test="oldPripid != null" >
+        OLD_PRIPID,
+      </if>
+      <if test="gtzxOpetype != null" >
+        GTZX_OPETYPE,
+      </if>
+      <if test="cerno != null" >
+        CERNO,
+      </if>
+      <if test="grppname != null" >
+        GRPPNAME,
+      </if>
+      <if test="accdate != null" >
+        ACCDATE,
+      </if>
+      <if test="apptype != null" >
+        APPTYPE,
+      </if>
+      <if test="restlevel != null" >
+        RESTLEVEL,
+      </if>
+      <if test="busscope1 != null" >
+        BUSSCOPE1,
+      </if>
+      <if test="busscope2 != null" >
+        BUSSCOPE2,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="fgstype != null" >
+        FGSTYPE,
+      </if>
+      <if test="regtype != null" >
+        REGTYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="nameid != null" >
+        #{nameid,jdbcType=VARCHAR},
+      </if>
+      <if test="pripid != null" >
+        #{pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="nametype != null" >
+        #{nametype,jdbcType=CHAR},
+      </if>
+      <if test="enttra != null" >
+        #{enttra,jdbcType=VARCHAR},
+      </if>
+      <if test="tradpiny != null" >
+        #{tradpiny,jdbcType=VARCHAR},
+      </if>
+      <if test="entname != null" >
+        #{entname,jdbcType=VARCHAR},
+      </if>
+      <if test="entnamespell != null" >
+        #{entnamespell,jdbcType=VARCHAR},
+      </if>
+      <if test="entcat != null" >
+        #{entcat,jdbcType=CHAR},
+      </if>
+      <if test="enttype != null" >
+        #{enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgform != null" >
+        #{orgform,jdbcType=VARCHAR},
+      </if>
+      <if test="namedistrict != null" >
+        #{namedistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="nameind != null" >
+        #{nameind,jdbcType=VARCHAR},
+      </if>
+      <if test="grpshform != null" >
+        #{grpshform,jdbcType=VARCHAR},
+      </if>
+      <if test="domdistrict != null" >
+        #{domdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="dom != null" >
+        #{dom,jdbcType=VARCHAR},
+      </if>
+      <if test="oploc != null" >
+        #{oploc,jdbcType=VARCHAR},
+      </if>
+      <if test="abuitemco != null" >
+        #{abuitemco,jdbcType=VARCHAR},
+      </if>
+      <if test="cbuitem != null" >
+        #{cbuitem,jdbcType=VARCHAR},
+      </if>
+      <if test="busscope != null" >
+        #{busscope,jdbcType=VARCHAR},
+      </if>
+      <if test="congro != null" >
+        #{congro,jdbcType=DECIMAL},
+      </if>
+      <if test="congrocur != null" >
+        #{congrocur,jdbcType=VARCHAR},
+      </if>
+      <if test="congrousd != null" >
+        #{congrousd,jdbcType=DECIMAL},
+      </if>
+      <if test="forsubconamusd != null" >
+        #{forsubconamusd,jdbcType=DECIMAL},
+      </if>
+      <if test="regcap != null" >
+        #{regcap,jdbcType=DECIMAL},
+      </if>
+      <if test="regcapcur != null" >
+        #{regcapcur,jdbcType=VARCHAR},
+      </if>
+      <if test="regcapusd != null" >
+        #{regcapusd,jdbcType=DECIMAL},
+      </if>
+      <if test="namestatus != null" >
+        #{namestatus,jdbcType=DECIMAL},
+      </if>
+      <if test="saveperfrom != null" >
+        #{saveperfrom,jdbcType=TIMESTAMP},
+      </if>
+      <if test="saveperto != null" >
+        #{saveperto,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="hksign != null" >
+        #{hksign,jdbcType=VARCHAR},
+      </if>
+      <if test="preregorg != null" >
+        #{preregorg,jdbcType=VARCHAR},
+      </if>
+      <if test="localadm != null" >
+        #{localadm,jdbcType=VARCHAR},
+      </if>
+      <if test="apprauth != null" >
+        #{apprauth,jdbcType=VARCHAR},
+      </if>
+      <if test="apprdate != null" >
+        #{apprdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isentnamealt != null" >
+        #{isentnamealt,jdbcType=DECIMAL},
+      </if>
+      <if test="entnamebealt != null" >
+        #{entnamebealt,jdbcType=VARCHAR},
+      </if>
+      <if test="continent != null" >
+        #{continent,jdbcType=CHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="industryphy != null" >
+        #{industryphy,jdbcType=CHAR},
+      </if>
+      <if test="industryco != null" >
+        #{industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="opscotype != null" >
+        #{opscotype,jdbcType=VARCHAR},
+      </if>
+      <if test="sExtTimestamp != null" >
+        #{sExtTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="apprno != null" >
+        #{apprno,jdbcType=VARCHAR},
+      </if>
+      <if test="isused != null" >
+        #{isused,jdbcType=CHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="opfyears != null" >
+        #{opfyears,jdbcType=DECIMAL},
+      </if>
+      <if test="street != null" >
+        #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="road != null" >
+        #{road,jdbcType=VARCHAR},
+      </if>
+      <if test="doorplate != null" >
+        #{doorplate,jdbcType=VARCHAR},
+      </if>
+      <if test="grpnamebealt != null" >
+        #{grpnamebealt,jdbcType=VARCHAR},
+      </if>
+      <if test="grpshformbealt != null" >
+        #{grpshformbealt,jdbcType=VARCHAR},
+      </if>
+      <if test="grpname != null" >
+        #{grpname,jdbcType=VARCHAR},
+      </if>
+      <if test="oldPripid != null" >
+        #{oldPripid,jdbcType=VARCHAR},
+      </if>
+      <if test="gtzxOpetype != null" >
+        #{gtzxOpetype,jdbcType=VARCHAR},
+      </if>
+      <if test="cerno != null" >
+        #{cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="grppname != null" >
+        #{grppname,jdbcType=VARCHAR},
+      </if>
+      <if test="accdate != null" >
+        #{accdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="apptype != null" >
+        #{apptype,jdbcType=CHAR},
+      </if>
+      <if test="restlevel != null" >
+        #{restlevel,jdbcType=CHAR},
+      </if>
+      <if test="busscope1 != null" >
+        #{busscope1,jdbcType=VARCHAR},
+      </if>
+      <if test="busscope2 != null" >
+        #{busscope2,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="fgstype != null" >
+        #{fgstype,jdbcType=VARCHAR},
+      </if>
+      <if test="regtype != null" >
+        #{regtype,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsywfh.McglJbxxZsExample" resultType="java.lang.Integer" >
+    select count(*) from GSYWFH.MCGL_JBXX_ZS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update GSYWFH.MCGL_JBXX_ZS
+    <set >
+      <if test="record.nameid != null" >
+        NAMEID = #{record.nameid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pripid != null" >
+        PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nametype != null" >
+        NAMETYPE = #{record.nametype,jdbcType=CHAR},
+      </if>
+      <if test="record.enttra != null" >
+        ENTTRA = #{record.enttra,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradpiny != null" >
+        TRADPINY = #{record.tradpiny,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entname != null" >
+        ENTNAME = #{record.entname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entnamespell != null" >
+        ENTNAMESPELL = #{record.entnamespell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entcat != null" >
+        ENTCAT = #{record.entcat,jdbcType=CHAR},
+      </if>
+      <if test="record.enttype != null" >
+        ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgform != null" >
+        ORGFORM = #{record.orgform,jdbcType=VARCHAR},
+      </if>
+      <if test="record.namedistrict != null" >
+        NAMEDISTRICT = #{record.namedistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nameind != null" >
+        NAMEIND = #{record.nameind,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grpshform != null" >
+        GRPSHFORM = #{record.grpshform,jdbcType=VARCHAR},
+      </if>
+      <if test="record.domdistrict != null" >
+        DOMDISTRICT = #{record.domdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dom != null" >
+        DOM = #{record.dom,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oploc != null" >
+        OPLOC = #{record.oploc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.abuitemco != null" >
+        ABUITEMCO = #{record.abuitemco,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cbuitem != null" >
+        CBUITEM = #{record.cbuitem,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busscope != null" >
+        BUSSCOPE = #{record.busscope,jdbcType=VARCHAR},
+      </if>
+      <if test="record.congro != null" >
+        CONGRO = #{record.congro,jdbcType=DECIMAL},
+      </if>
+      <if test="record.congrocur != null" >
+        CONGROCUR = #{record.congrocur,jdbcType=VARCHAR},
+      </if>
+      <if test="record.congrousd != null" >
+        CONGROUSD = #{record.congrousd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.forsubconamusd != null" >
+        FORSUBCONAMUSD = #{record.forsubconamusd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.regcap != null" >
+        REGCAP = #{record.regcap,jdbcType=DECIMAL},
+      </if>
+      <if test="record.regcapcur != null" >
+        REGCAPCUR = #{record.regcapcur,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regcapusd != null" >
+        REGCAPUSD = #{record.regcapusd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.namestatus != null" >
+        NAMESTATUS = #{record.namestatus,jdbcType=DECIMAL},
+      </if>
+      <if test="record.saveperfrom != null" >
+        SAVEPERFROM = #{record.saveperfrom,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.saveperto != null" >
+        SAVEPERTO = #{record.saveperto,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null" >
+        TEL = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hksign != null" >
+        HKSIGN = #{record.hksign,jdbcType=VARCHAR},
+      </if>
+      <if test="record.preregorg != null" >
+        PREREGORG = #{record.preregorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localadm != null" >
+        LOCALADM = #{record.localadm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.apprauth != null" >
+        APPRAUTH = #{record.apprauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.apprdate != null" >
+        APPRDATE = #{record.apprdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isentnamealt != null" >
+        ISENTNAMEALT = #{record.isentnamealt,jdbcType=DECIMAL},
+      </if>
+      <if test="record.entnamebealt != null" >
+        ENTNAMEBEALT = #{record.entnamebealt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.continent != null" >
+        CONTINENT = #{record.continent,jdbcType=CHAR},
+      </if>
+      <if test="record.country != null" >
+        COUNTRY = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryphy != null" >
+        INDUSTRYPHY = #{record.industryphy,jdbcType=CHAR},
+      </if>
+      <if test="record.industryco != null" >
+        INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opscotype != null" >
+        OPSCOTYPE = #{record.opscotype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sExtTimestamp != null" >
+        S_EXT_TIMESTAMP = #{record.sExtTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.apprno != null" >
+        APPRNO = #{record.apprno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isused != null" >
+        ISUSED = #{record.isused,jdbcType=CHAR},
+      </if>
+      <if test="record.province != null" >
+        PROVINCE = #{record.province,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city != null" >
+        CITY = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.county != null" >
+        COUNTY = #{record.county,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opfyears != null" >
+        OPFYEARS = #{record.opfyears,jdbcType=DECIMAL},
+      </if>
+      <if test="record.street != null" >
+        STREET = #{record.street,jdbcType=VARCHAR},
+      </if>
+      <if test="record.road != null" >
+        ROAD = #{record.road,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorplate != null" >
+        DOORPLATE = #{record.doorplate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grpnamebealt != null" >
+        GRPNAMEBEALT = #{record.grpnamebealt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grpshformbealt != null" >
+        GRPSHFORMBEALT = #{record.grpshformbealt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grpname != null" >
+        GRPNAME = #{record.grpname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oldPripid != null" >
+        OLD_PRIPID = #{record.oldPripid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gtzxOpetype != null" >
+        GTZX_OPETYPE = #{record.gtzxOpetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cerno != null" >
+        CERNO = #{record.cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grppname != null" >
+        GRPPNAME = #{record.grppname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accdate != null" >
+        ACCDATE = #{record.accdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.apptype != null" >
+        APPTYPE = #{record.apptype,jdbcType=CHAR},
+      </if>
+      <if test="record.restlevel != null" >
+        RESTLEVEL = #{record.restlevel,jdbcType=CHAR},
+      </if>
+      <if test="record.busscope1 != null" >
+        BUSSCOPE1 = #{record.busscope1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busscope2 != null" >
+        BUSSCOPE2 = #{record.busscope2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fgstype != null" >
+        FGSTYPE = #{record.fgstype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regtype != null" >
+        REGTYPE = #{record.regtype,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update GSYWFH.MCGL_JBXX_ZS
+    set NAMEID = #{record.nameid,jdbcType=VARCHAR},
+      PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      NAMETYPE = #{record.nametype,jdbcType=CHAR},
+      ENTTRA = #{record.enttra,jdbcType=VARCHAR},
+      TRADPINY = #{record.tradpiny,jdbcType=VARCHAR},
+      ENTNAME = #{record.entname,jdbcType=VARCHAR},
+      ENTNAMESPELL = #{record.entnamespell,jdbcType=VARCHAR},
+      ENTCAT = #{record.entcat,jdbcType=CHAR},
+      ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      ORGFORM = #{record.orgform,jdbcType=VARCHAR},
+      NAMEDISTRICT = #{record.namedistrict,jdbcType=VARCHAR},
+      NAMEIND = #{record.nameind,jdbcType=VARCHAR},
+      GRPSHFORM = #{record.grpshform,jdbcType=VARCHAR},
+      DOMDISTRICT = #{record.domdistrict,jdbcType=VARCHAR},
+      DOM = #{record.dom,jdbcType=VARCHAR},
+      OPLOC = #{record.oploc,jdbcType=VARCHAR},
+      ABUITEMCO = #{record.abuitemco,jdbcType=VARCHAR},
+      CBUITEM = #{record.cbuitem,jdbcType=VARCHAR},
+      BUSSCOPE = #{record.busscope,jdbcType=VARCHAR},
+      CONGRO = #{record.congro,jdbcType=DECIMAL},
+      CONGROCUR = #{record.congrocur,jdbcType=VARCHAR},
+      CONGROUSD = #{record.congrousd,jdbcType=DECIMAL},
+      FORSUBCONAMUSD = #{record.forsubconamusd,jdbcType=DECIMAL},
+      REGCAP = #{record.regcap,jdbcType=DECIMAL},
+      REGCAPCUR = #{record.regcapcur,jdbcType=VARCHAR},
+      REGCAPUSD = #{record.regcapusd,jdbcType=DECIMAL},
+      NAMESTATUS = #{record.namestatus,jdbcType=DECIMAL},
+      SAVEPERFROM = #{record.saveperfrom,jdbcType=TIMESTAMP},
+      SAVEPERTO = #{record.saveperto,jdbcType=TIMESTAMP},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      TEL = #{record.tel,jdbcType=VARCHAR},
+      HKSIGN = #{record.hksign,jdbcType=VARCHAR},
+      PREREGORG = #{record.preregorg,jdbcType=VARCHAR},
+      LOCALADM = #{record.localadm,jdbcType=VARCHAR},
+      APPRAUTH = #{record.apprauth,jdbcType=VARCHAR},
+      APPRDATE = #{record.apprdate,jdbcType=TIMESTAMP},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      ISENTNAMEALT = #{record.isentnamealt,jdbcType=DECIMAL},
+      ENTNAMEBEALT = #{record.entnamebealt,jdbcType=VARCHAR},
+      CONTINENT = #{record.continent,jdbcType=CHAR},
+      COUNTRY = #{record.country,jdbcType=VARCHAR},
+      INDUSTRYPHY = #{record.industryphy,jdbcType=CHAR},
+      INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      OPSCOTYPE = #{record.opscotype,jdbcType=VARCHAR},
+      S_EXT_TIMESTAMP = #{record.sExtTimestamp,jdbcType=TIMESTAMP},
+      APPRNO = #{record.apprno,jdbcType=VARCHAR},
+      ISUSED = #{record.isused,jdbcType=CHAR},
+      PROVINCE = #{record.province,jdbcType=VARCHAR},
+      CITY = #{record.city,jdbcType=VARCHAR},
+      COUNTY = #{record.county,jdbcType=VARCHAR},
+      OPFYEARS = #{record.opfyears,jdbcType=DECIMAL},
+      STREET = #{record.street,jdbcType=VARCHAR},
+      ROAD = #{record.road,jdbcType=VARCHAR},
+      DOORPLATE = #{record.doorplate,jdbcType=VARCHAR},
+      GRPNAMEBEALT = #{record.grpnamebealt,jdbcType=VARCHAR},
+      GRPSHFORMBEALT = #{record.grpshformbealt,jdbcType=VARCHAR},
+      GRPNAME = #{record.grpname,jdbcType=VARCHAR},
+      OLD_PRIPID = #{record.oldPripid,jdbcType=VARCHAR},
+      GTZX_OPETYPE = #{record.gtzxOpetype,jdbcType=VARCHAR},
+      CERNO = #{record.cerno,jdbcType=VARCHAR},
+      GRPPNAME = #{record.grppname,jdbcType=VARCHAR},
+      ACCDATE = #{record.accdate,jdbcType=TIMESTAMP},
+      APPTYPE = #{record.apptype,jdbcType=CHAR},
+      RESTLEVEL = #{record.restlevel,jdbcType=CHAR},
+      BUSSCOPE1 = #{record.busscope1,jdbcType=VARCHAR},
+      BUSSCOPE2 = #{record.busscope2,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      FGSTYPE = #{record.fgstype,jdbcType=VARCHAR},
+      REGTYPE = #{record.regtype,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+  <select id="selectMcyhzData" resultType="java.util.Map">
+  	select (case when to_char(t.apprdate, 'yyyy-MM-dd') = to_char(sysdate, 'yyyy-MM-dd') then 'now'
+       when to_char(t.apprdate, 'yyyy-MM-dd') = to_char(sysdate-1, 'yyyy-MM-dd') then 'before' else '' end) as "datestr", t.nametype as "nametype", count(1) as "sl"
+    from mcgl_jbxx_zs t
+   where (to_char(t.apprdate, 'yyyy-MM-dd') = to_char(sysdate, 'yyyy-MM-dd')
+      or to_char(t.apprdate, 'yyyy-MM-dd') = to_char(sysdate - 1, 'yyyy-MM-dd'))
+      and t.nametype is not null
+   group by to_char(t.apprdate, 'yyyy-MM-dd'), t.nametype order by t.nametype desc
+  </select>
+</mapper>

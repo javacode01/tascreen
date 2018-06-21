@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsyw.SerdevSbxxMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsyw.SerdevSbxx" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="VARCHAR" />
+    <result column="CATEGORY" property="category" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="APPLICANT" property="applicant" jdbcType="VARCHAR" />
+    <result column="APPLICANT_ENG" property="applicantEng" jdbcType="VARCHAR" />
+    <result column="APP_DATE" property="appDate" jdbcType="VARCHAR" />
+    <result column="REG_DATE" property="regDate" jdbcType="VARCHAR" />
+    <result column="CLOSE_DATE" property="closeDate" jdbcType="VARCHAR" />
+    <result column="COMMODITY" property="commodity" jdbcType="VARCHAR" />
+    <result column="COUNTRY" property="country" jdbcType="VARCHAR" />
+    <result column="AGENT_ORG" property="agentOrg" jdbcType="VARCHAR" />
+    <result column="ORGAN_CODE" property="organCode" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="CREATER" property="creater" jdbcType="VARCHAR" />
+    <result column="CREATE_TYPE" property="createType" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, TYPE, CATEGORY, NAME, APPLICANT, APPLICANT_ENG, APP_DATE, REG_DATE, CLOSE_DATE, 
+    COMMODITY, COUNTRY, AGENT_ORG, ORGAN_CODE, CREATE_TIME, CREATER, CREATE_TYPE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsyw.SerdevSbxxExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TAGSYW.SERDEV_SBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TAGSYW.SERDEV_SBXX
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TAGSYW.SERDEV_SBXX
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsyw.SerdevSbxxExample" >
+    delete from TAGSYW.SERDEV_SBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsyw.SerdevSbxx" >
+    insert into TAGSYW.SERDEV_SBXX (ID, TYPE, CATEGORY, 
+      NAME, APPLICANT, APPLICANT_ENG, 
+      APP_DATE, REG_DATE, CLOSE_DATE, 
+      COMMODITY, COUNTRY, AGENT_ORG, 
+      ORGAN_CODE, CREATE_TIME, CREATER, 
+      CREATE_TYPE)
+    values (#{id,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{applicant,jdbcType=VARCHAR}, #{applicantEng,jdbcType=VARCHAR}, 
+      #{appDate,jdbcType=VARCHAR}, #{regDate,jdbcType=VARCHAR}, #{closeDate,jdbcType=VARCHAR}, 
+      #{commodity,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{agentOrg,jdbcType=VARCHAR}, 
+      #{organCode,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{creater,jdbcType=VARCHAR}, 
+      #{createType,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsyw.SerdevSbxx" >
+    insert into TAGSYW.SERDEV_SBXX
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="category != null" >
+        CATEGORY,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="applicant != null" >
+        APPLICANT,
+      </if>
+      <if test="applicantEng != null" >
+        APPLICANT_ENG,
+      </if>
+      <if test="appDate != null" >
+        APP_DATE,
+      </if>
+      <if test="regDate != null" >
+        REG_DATE,
+      </if>
+      <if test="closeDate != null" >
+        CLOSE_DATE,
+      </if>
+      <if test="commodity != null" >
+        COMMODITY,
+      </if>
+      <if test="country != null" >
+        COUNTRY,
+      </if>
+      <if test="agentOrg != null" >
+        AGENT_ORG,
+      </if>
+      <if test="organCode != null" >
+        ORGAN_CODE,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="creater != null" >
+        CREATER,
+      </if>
+      <if test="createType != null" >
+        CREATE_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="applicant != null" >
+        #{applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="applicantEng != null" >
+        #{applicantEng,jdbcType=VARCHAR},
+      </if>
+      <if test="appDate != null" >
+        #{appDate,jdbcType=VARCHAR},
+      </if>
+      <if test="regDate != null" >
+        #{regDate,jdbcType=VARCHAR},
+      </if>
+      <if test="closeDate != null" >
+        #{closeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodity != null" >
+        #{commodity,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="agentOrg != null" >
+        #{agentOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="organCode != null" >
+        #{organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createType != null" >
+        #{createType,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsyw.SerdevSbxxExample" resultType="java.lang.Integer" >
+    select count(*) from TAGSYW.SERDEV_SBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TAGSYW.SERDEV_SBXX
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        TYPE = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.category != null" >
+        CATEGORY = #{record.category,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicant != null" >
+        APPLICANT = #{record.applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicantEng != null" >
+        APPLICANT_ENG = #{record.applicantEng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appDate != null" >
+        APP_DATE = #{record.appDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regDate != null" >
+        REG_DATE = #{record.regDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.closeDate != null" >
+        CLOSE_DATE = #{record.closeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commodity != null" >
+        COMMODITY = #{record.commodity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.country != null" >
+        COUNTRY = #{record.country,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agentOrg != null" >
+        AGENT_ORG = #{record.agentOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organCode != null" >
+        ORGAN_CODE = #{record.organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.creater != null" >
+        CREATER = #{record.creater,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createType != null" >
+        CREATE_TYPE = #{record.createType,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TAGSYW.SERDEV_SBXX
+    set ID = #{record.id,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=VARCHAR},
+      CATEGORY = #{record.category,jdbcType=VARCHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      APPLICANT = #{record.applicant,jdbcType=VARCHAR},
+      APPLICANT_ENG = #{record.applicantEng,jdbcType=VARCHAR},
+      APP_DATE = #{record.appDate,jdbcType=VARCHAR},
+      REG_DATE = #{record.regDate,jdbcType=VARCHAR},
+      CLOSE_DATE = #{record.closeDate,jdbcType=VARCHAR},
+      COMMODITY = #{record.commodity,jdbcType=VARCHAR},
+      COUNTRY = #{record.country,jdbcType=VARCHAR},
+      AGENT_ORG = #{record.agentOrg,jdbcType=VARCHAR},
+      ORGAN_CODE = #{record.organCode,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATER = #{record.creater,jdbcType=VARCHAR},
+      CREATE_TYPE = #{record.createType,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yawei.model.gsyw.SerdevSbxx" >
+    update TAGSYW.SERDEV_SBXX
+    <set >
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        CATEGORY = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="applicant != null" >
+        APPLICANT = #{applicant,jdbcType=VARCHAR},
+      </if>
+      <if test="applicantEng != null" >
+        APPLICANT_ENG = #{applicantEng,jdbcType=VARCHAR},
+      </if>
+      <if test="appDate != null" >
+        APP_DATE = #{appDate,jdbcType=VARCHAR},
+      </if>
+      <if test="regDate != null" >
+        REG_DATE = #{regDate,jdbcType=VARCHAR},
+      </if>
+      <if test="closeDate != null" >
+        CLOSE_DATE = #{closeDate,jdbcType=VARCHAR},
+      </if>
+      <if test="commodity != null" >
+        COMMODITY = #{commodity,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        COUNTRY = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="agentOrg != null" >
+        AGENT_ORG = #{agentOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="organCode != null" >
+        ORGAN_CODE = #{organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        CREATER = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createType != null" >
+        CREATE_TYPE = #{createType,jdbcType=CHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yawei.model.gsyw.SerdevSbxx" >
+    update TAGSYW.SERDEV_SBXX
+    set TYPE = #{type,jdbcType=VARCHAR},
+      CATEGORY = #{category,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      APPLICANT = #{applicant,jdbcType=VARCHAR},
+      APPLICANT_ENG = #{applicantEng,jdbcType=VARCHAR},
+      APP_DATE = #{appDate,jdbcType=VARCHAR},
+      REG_DATE = #{regDate,jdbcType=VARCHAR},
+      CLOSE_DATE = #{closeDate,jdbcType=VARCHAR},
+      COMMODITY = #{commodity,jdbcType=VARCHAR},
+      COUNTRY = #{country,jdbcType=VARCHAR},
+      AGENT_ORG = #{agentOrg,jdbcType=VARCHAR},
+      ORGAN_CODE = #{organCode,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATER = #{creater,jdbcType=VARCHAR},
+      CREATE_TYPE = #{createType,jdbcType=CHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+  <select id="selectZcsbqsfxData" resultType="java.util.Map" >
+  	select SUBSTR(REG_DATE, 0, 4) AS NAME, count(*) AS VALUE
+	  from SERDEV_SBXX t
+	 where t.type = '注册商标'
+	 and t.reg_date is not null
+	 and SUBSTR(REG_DATE, 0, 4) &lt;= to_char(sysdate,'YYYY')
+	 group by SUBSTR(REG_DATE, 0, 4)
+	 order by SUBSTR(REG_DATE, 0, 4) desc
+  </select>
+  <select id="selectZqrzGqczData" resultType="java.util.Map" >
+  	select count(1) as bll,round(sum(priclasecam),0) as dbzqse,round(sum(expsharam),0) as czje
+	from gqdj_jbxx_zs 
+	where status in('1','3')
+	AND insdate  &lt;=  sysdate
+  </select>
+  <select id="selectZqrzDcdyData" resultType="java.util.Map" >
+  	select count(*) as bll,round(sum(dyje),0) as dyje,sum(dywsl) as dywsl from(
+		select case when morid in('bb81e75571875001558f95bcc826fd','b0abcf5cb359b9015ccd8ce69c5ee6','b0abcf5cb359b9015ccd91dcea6076','bb81e74b3365e8014b336f08f901ce') 
+		            and priclasecam  >=  50000000 
+		           then priclasecam/1000
+		           else priclasecam 
+		       end as dyje,
+           (select count(1) from ht_dywxx dywxx where dywxx.morid = jbxx.morid) as dywsl
+		  from ht_dcdy_jbxx jbxx
+       where MORSTATUS='1'  AND regidate  &lt;=  sysdate)
+  </select>
+  <select id="selectZqrzSbqzyData" resultType="java.util.Map" >
+  	select count(*) as bll,round(sum(rzje),0) as zyje from(
+		select rzje 
+		  from fwfz_zqrz  where zysj  &lt;=  sysdate)
+  </select>
+  <select id="selectGqxzcsbData" resultType="java.util.Map" >
+  	SELECT NVL(SB.VALUE, 0) AS "value",
+	       ORGAN_CODE AS CODE,
+	       ORGAN_NAME AS "name",
+	       PO.SEQ
+	  FROM PUB_ORGAN PO
+	  LEFT JOIN (SELECT COUNT(1) AS VALUE, ORGAN_CODE AS CODE
+	               FROM SERDEV_SBXX
+	              WHERE TYPE in ('注册商标', '马德里', '单一国家')
+	                AND SUBSTR(REG_DATE, 0, 4) &lt;= TO_CHAR(sysdate, 'YYYY')
+	              GROUP BY ORGAN_CODE) SB ON SB.CODE = PO.ORGAN_CODE
+	 WHERE PO.ORGAN_TYPE = '4'
+	   AND PO.IS_ORG_DEP = '01'
+	UNION
+	SELECT CASE
+	         WHEN (SELECT COUNT(1)
+	                 FROM SERDEV_SBXX
+	                WHERE ORGAN_CODE = '3709'
+	                  AND TYPE in ('注册商标', '马德里', '单一国家')
+	                  AND SUBSTR(REG_DATE, 0, 4) &lt;= TO_CHAR(sysdate, 'YYYY')) -
+	              (SELECT COUNT(1)
+	                 FROM SERDEV_SBXX
+	                WHERE ORGAN_CODE != '3709'
+	                  AND TYPE in ('注册商标', '马德里', '单一国家')
+	                  AND SUBSTR(REG_DATE, 0, 4) &lt;= TO_CHAR(sysdate, 'YYYY')) &lt; 0 THEN
+	          0
+	         ELSE
+	          (SELECT COUNT(1)
+	             FROM SERDEV_SBXX
+	            WHERE ORGAN_CODE = '3709'
+	              AND TYPE in ('注册商标', '马德里', '单一国家')
+	              AND SUBSTR(REG_DATE, 0, 4) &lt;= TO_CHAR(sysdate, 'YYYY')) -
+	          (SELECT COUNT(1)
+	             FROM SERDEV_SBXX
+	            WHERE ORGAN_CODE != '3709'
+	              AND TYPE in ('注册商标', '马德里', '单一国家')
+	              AND SUBSTR(REG_DATE, 0, 4) &lt;= TO_CHAR(sysdate, 'YYYY'))
+	       END,
+	       '未认领',
+	       '未认领',
+	       9999
+	  FROM DUAL
+	 ORDER BY SEQ
+  </select>
+</mapper>

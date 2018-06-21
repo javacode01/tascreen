@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsyw.ZfglCfJbxxMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsyw.ZfglCfJbxx" >
+    <result column="CASENO" property="caseno" jdbcType="VARCHAR" />
+    <result column="CASENAME" property="casename" jdbcType="VARCHAR" />
+    <result column="CASEREASON" property="casereason" jdbcType="VARCHAR" />
+    <result column="CASEVAL" property="caseval" jdbcType="DECIMAL" />
+    <result column="APPPROCEDURE" property="appprocedure" jdbcType="CHAR" />
+    <result column="ILLEGACTTYPE" property="illegacttype" jdbcType="VARCHAR" />
+    <result column="ILLEGACTTYPE_NAME" property="illegacttypeName" jdbcType="VARCHAR" />
+    <result column="QUABASIS" property="quabasis" jdbcType="VARCHAR" />
+    <result column="QUABASIS_NAME" property="quabasisName" jdbcType="VARCHAR" />
+    <result column="ILLEGINCOME" property="illegincome" jdbcType="DECIMAL" />
+    <result column="PENTYPE" property="pentype" jdbcType="VARCHAR" />
+    <result column="PENTYPE_NAME" property="pentypeName" jdbcType="VARCHAR" />
+    <result column="PENRESULT" property="penresult" jdbcType="VARCHAR" />
+    <result column="PENRESULT_NAME" property="penresultName" jdbcType="VARCHAR" />
+    <result column="PENAM" property="penam" jdbcType="DECIMAL" />
+    <result column="FORFAM" property="forfam" jdbcType="DECIMAL" />
+    <result column="APPRCURAM" property="apprcuram" jdbcType="DECIMAL" />
+    <result column="PENWRITNO" property="penwritno" jdbcType="VARCHAR" />
+    <result column="PENDECISSDATE" property="pendecissdate" jdbcType="TIMESTAMP" />
+    <result column="FEDBACSTA" property="fedbacsta" jdbcType="VARCHAR" />
+    <result column="CASEORG" property="caseorg" jdbcType="VARCHAR" />
+    <result column="CASEORG_NAME" property="caseorgName" jdbcType="VARCHAR" />
+    <result column="PENEXEST" property="penexest" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="STATE_NAME" property="stateName" jdbcType="VARCHAR" />
+    <result column="CLOCASEDATE" property="clocasedate" jdbcType="TIMESTAMP" />
+    <result column="CLOCASEREA" property="clocaserea" jdbcType="VARCHAR" />
+    <result column="CLOCASEREANAME" property="clocasereaname" jdbcType="VARCHAR" />
+    <result column="ACCPTRANFAUTHTYPE" property="accptranfauthtype" jdbcType="VARCHAR" />
+    <result column="ACCPTRANFAUTHTYPENAME" property="accptranfauthtypename" jdbcType="VARCHAR" />
+    <result column="ACCPTRANFAUTH" property="accptranfauth" jdbcType="VARCHAR" />
+    <result column="TRANFREATYPE" property="tranfreatype" jdbcType="VARCHAR" />
+    <result column="TRANFREATYPENAME" property="tranfreatypename" jdbcType="VARCHAR" />
+    <result column="TRANFREA" property="tranfrea" jdbcType="VARCHAR" />
+    <result column="TRANFDATE" property="tranfdate" jdbcType="TIMESTAMP" />
+    <result column="PRIPID" property="pripid" jdbcType="VARCHAR" />
+    <result column="CASEFIDATE" property="casefidate" jdbcType="TIMESTAMP" />
+    <result column="CASEENDDATE" property="caseenddate" jdbcType="TIMESTAMP" />
+    <result column="CASESCEDISTRICT" property="casescedistrict" jdbcType="VARCHAR" />
+    <result column="CASESCEDISNAME" property="casescedisname" jdbcType="VARCHAR" />
+    <result column="CASESPOT" property="casespot" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CERNO" property="cerno" jdbcType="VARCHAR" />
+    <result column="ADSIGN" property="adsign" jdbcType="VARCHAR" />
+    <result column="PROERLEREP" property="proerlerep" jdbcType="VARCHAR" />
+    <result column="COMMEACO" property="commeaco" jdbcType="VARCHAR" />
+    <result column="COMMEACONAME" property="commeaconame" jdbcType="VARCHAR" />
+    <result column="CASETYPE" property="casetype" jdbcType="VARCHAR" />
+    <result column="FILENO" property="fileno" jdbcType="VARCHAR" />
+    <result column="CASEFIAUTH" property="casefiauth" jdbcType="VARCHAR" />
+    <result column="CASEFIAUTH_NAME" property="casefiauthName" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="ENTCAT" property="entcat" jdbcType="VARCHAR" />
+    <result column="INDUSTRYPHY" property="industryphy" jdbcType="VARCHAR" />
+    <result column="ISFY" property="isfy" jdbcType="CHAR" />
+    <result column="INDUSTRYCO" property="industryco" jdbcType="VARCHAR" />
+    <result column="ISTZ" property="istz" jdbcType="CHAR" />
+    <result column="ISGS" property="isgs" jdbcType="CHAR" />
+    <result column="CASEID" property="caseid" jdbcType="VARCHAR" />
+    <result column="ISSS" property="isss" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CASENO, CASENAME, CASEREASON, CASEVAL, APPPROCEDURE, ILLEGACTTYPE, ILLEGACTTYPE_NAME, 
+    QUABASIS, QUABASIS_NAME, ILLEGINCOME, PENTYPE, PENTYPE_NAME, PENRESULT, PENRESULT_NAME, 
+    PENAM, FORFAM, APPRCURAM, PENWRITNO, PENDECISSDATE, FEDBACSTA, CASEORG, CASEORG_NAME, 
+    PENEXEST, STATE, STATE_NAME, CLOCASEDATE, CLOCASEREA, CLOCASEREANAME, ACCPTRANFAUTHTYPE, 
+    ACCPTRANFAUTHTYPENAME, ACCPTRANFAUTH, TRANFREATYPE, TRANFREATYPENAME, TRANFREA, TRANFDATE, 
+    PRIPID, CASEFIDATE, CASEENDDATE, CASESCEDISTRICT, CASESCEDISNAME, CASESPOT, NAME, 
+    CERNO, ADSIGN, PROERLEREP, COMMEACO, COMMEACONAME, CASETYPE, FILENO, CASEFIAUTH, 
+    CASEFIAUTH_NAME, TEL, ENTCAT, INDUSTRYPHY, ISFY, INDUSTRYCO, ISTZ, ISGS, CASEID, 
+    ISSS
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsyw.ZfglCfJbxxExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TAGSYW.ZFGL_CF_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsyw.ZfglCfJbxxExample" >
+    delete from TAGSYW.ZFGL_CF_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsyw.ZfglCfJbxx" >
+    insert into TAGSYW.ZFGL_CF_JBXX (CASENO, CASENAME, CASEREASON, 
+      CASEVAL, APPPROCEDURE, ILLEGACTTYPE, 
+      ILLEGACTTYPE_NAME, QUABASIS, QUABASIS_NAME, 
+      ILLEGINCOME, PENTYPE, PENTYPE_NAME, 
+      PENRESULT, PENRESULT_NAME, PENAM, 
+      FORFAM, APPRCURAM, PENWRITNO, 
+      PENDECISSDATE, FEDBACSTA, CASEORG, 
+      CASEORG_NAME, PENEXEST, STATE, 
+      STATE_NAME, CLOCASEDATE, CLOCASEREA, 
+      CLOCASEREANAME, ACCPTRANFAUTHTYPE, ACCPTRANFAUTHTYPENAME, 
+      ACCPTRANFAUTH, TRANFREATYPE, TRANFREATYPENAME, 
+      TRANFREA, TRANFDATE, PRIPID, 
+      CASEFIDATE, CASEENDDATE, CASESCEDISTRICT, 
+      CASESCEDISNAME, CASESPOT, NAME, 
+      CERNO, ADSIGN, PROERLEREP, 
+      COMMEACO, COMMEACONAME, CASETYPE, 
+      FILENO, CASEFIAUTH, CASEFIAUTH_NAME, 
+      TEL, ENTCAT, INDUSTRYPHY, 
+      ISFY, INDUSTRYCO, ISTZ, ISGS, 
+      CASEID, ISSS)
+    values (#{caseno,jdbcType=VARCHAR}, #{casename,jdbcType=VARCHAR}, #{casereason,jdbcType=VARCHAR}, 
+      #{caseval,jdbcType=DECIMAL}, #{appprocedure,jdbcType=CHAR}, #{illegacttype,jdbcType=VARCHAR}, 
+      #{illegacttypeName,jdbcType=VARCHAR}, #{quabasis,jdbcType=VARCHAR}, #{quabasisName,jdbcType=VARCHAR}, 
+      #{illegincome,jdbcType=DECIMAL}, #{pentype,jdbcType=VARCHAR}, #{pentypeName,jdbcType=VARCHAR}, 
+      #{penresult,jdbcType=VARCHAR}, #{penresultName,jdbcType=VARCHAR}, #{penam,jdbcType=DECIMAL}, 
+      #{forfam,jdbcType=DECIMAL}, #{apprcuram,jdbcType=DECIMAL}, #{penwritno,jdbcType=VARCHAR}, 
+      #{pendecissdate,jdbcType=TIMESTAMP}, #{fedbacsta,jdbcType=VARCHAR}, #{caseorg,jdbcType=VARCHAR}, 
+      #{caseorgName,jdbcType=VARCHAR}, #{penexest,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
+      #{stateName,jdbcType=VARCHAR}, #{clocasedate,jdbcType=TIMESTAMP}, #{clocaserea,jdbcType=VARCHAR}, 
+      #{clocasereaname,jdbcType=VARCHAR}, #{accptranfauthtype,jdbcType=VARCHAR}, #{accptranfauthtypename,jdbcType=VARCHAR}, 
+      #{accptranfauth,jdbcType=VARCHAR}, #{tranfreatype,jdbcType=VARCHAR}, #{tranfreatypename,jdbcType=VARCHAR}, 
+      #{tranfrea,jdbcType=VARCHAR}, #{tranfdate,jdbcType=TIMESTAMP}, #{pripid,jdbcType=VARCHAR}, 
+      #{casefidate,jdbcType=TIMESTAMP}, #{caseenddate,jdbcType=TIMESTAMP}, #{casescedistrict,jdbcType=VARCHAR}, 
+      #{casescedisname,jdbcType=VARCHAR}, #{casespot,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{cerno,jdbcType=VARCHAR}, #{adsign,jdbcType=VARCHAR}, #{proerlerep,jdbcType=VARCHAR}, 
+      #{commeaco,jdbcType=VARCHAR}, #{commeaconame,jdbcType=VARCHAR}, #{casetype,jdbcType=VARCHAR}, 
+      #{fileno,jdbcType=VARCHAR}, #{casefiauth,jdbcType=VARCHAR}, #{casefiauthName,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{entcat,jdbcType=VARCHAR}, #{industryphy,jdbcType=VARCHAR}, 
+      #{isfy,jdbcType=CHAR}, #{industryco,jdbcType=VARCHAR}, #{istz,jdbcType=CHAR}, #{isgs,jdbcType=CHAR}, 
+      #{caseid,jdbcType=VARCHAR}, #{isss,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsyw.ZfglCfJbxx" >
+    insert into TAGSYW.ZFGL_CF_JBXX
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="caseno != null" >
+        CASENO,
+      </if>
+      <if test="casename != null" >
+        CASENAME,
+      </if>
+      <if test="casereason != null" >
+        CASEREASON,
+      </if>
+      <if test="caseval != null" >
+        CASEVAL,
+      </if>
+      <if test="appprocedure != null" >
+        APPPROCEDURE,
+      </if>
+      <if test="illegacttype != null" >
+        ILLEGACTTYPE,
+      </if>
+      <if test="illegacttypeName != null" >
+        ILLEGACTTYPE_NAME,
+      </if>
+      <if test="quabasis != null" >
+        QUABASIS,
+      </if>
+      <if test="quabasisName != null" >
+        QUABASIS_NAME,
+      </if>
+      <if test="illegincome != null" >
+        ILLEGINCOME,
+      </if>
+      <if test="pentype != null" >
+        PENTYPE,
+      </if>
+      <if test="pentypeName != null" >
+        PENTYPE_NAME,
+      </if>
+      <if test="penresult != null" >
+        PENRESULT,
+      </if>
+      <if test="penresultName != null" >
+        PENRESULT_NAME,
+      </if>
+      <if test="penam != null" >
+        PENAM,
+      </if>
+      <if test="forfam != null" >
+        FORFAM,
+      </if>
+      <if test="apprcuram != null" >
+        APPRCURAM,
+      </if>
+      <if test="penwritno != null" >
+        PENWRITNO,
+      </if>
+      <if test="pendecissdate != null" >
+        PENDECISSDATE,
+      </if>
+      <if test="fedbacsta != null" >
+        FEDBACSTA,
+      </if>
+      <if test="caseorg != null" >
+        CASEORG,
+      </if>
+      <if test="caseorgName != null" >
+        CASEORG_NAME,
+      </if>
+      <if test="penexest != null" >
+        PENEXEST,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="stateName != null" >
+        STATE_NAME,
+      </if>
+      <if test="clocasedate != null" >
+        CLOCASEDATE,
+      </if>
+      <if test="clocaserea != null" >
+        CLOCASEREA,
+      </if>
+      <if test="clocasereaname != null" >
+        CLOCASEREANAME,
+      </if>
+      <if test="accptranfauthtype != null" >
+        ACCPTRANFAUTHTYPE,
+      </if>
+      <if test="accptranfauthtypename != null" >
+        ACCPTRANFAUTHTYPENAME,
+      </if>
+      <if test="accptranfauth != null" >
+        ACCPTRANFAUTH,
+      </if>
+      <if test="tranfreatype != null" >
+        TRANFREATYPE,
+      </if>
+      <if test="tranfreatypename != null" >
+        TRANFREATYPENAME,
+      </if>
+      <if test="tranfrea != null" >
+        TRANFREA,
+      </if>
+      <if test="tranfdate != null" >
+        TRANFDATE,
+      </if>
+      <if test="pripid != null" >
+        PRIPID,
+      </if>
+      <if test="casefidate != null" >
+        CASEFIDATE,
+      </if>
+      <if test="caseenddate != null" >
+        CASEENDDATE,
+      </if>
+      <if test="casescedistrict != null" >
+        CASESCEDISTRICT,
+      </if>
+      <if test="casescedisname != null" >
+        CASESCEDISNAME,
+      </if>
+      <if test="casespot != null" >
+        CASESPOT,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="cerno != null" >
+        CERNO,
+      </if>
+      <if test="adsign != null" >
+        ADSIGN,
+      </if>
+      <if test="proerlerep != null" >
+        PROERLEREP,
+      </if>
+      <if test="commeaco != null" >
+        COMMEACO,
+      </if>
+      <if test="commeaconame != null" >
+        COMMEACONAME,
+      </if>
+      <if test="casetype != null" >
+        CASETYPE,
+      </if>
+      <if test="fileno != null" >
+        FILENO,
+      </if>
+      <if test="casefiauth != null" >
+        CASEFIAUTH,
+      </if>
+      <if test="casefiauthName != null" >
+        CASEFIAUTH_NAME,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="entcat != null" >
+        ENTCAT,
+      </if>
+      <if test="industryphy != null" >
+        INDUSTRYPHY,
+      </if>
+      <if test="isfy != null" >
+        ISFY,
+      </if>
+      <if test="industryco != null" >
+        INDUSTRYCO,
+      </if>
+      <if test="istz != null" >
+        ISTZ,
+      </if>
+      <if test="isgs != null" >
+        ISGS,
+      </if>
+      <if test="caseid != null" >
+        CASEID,
+      </if>
+      <if test="isss != null" >
+        ISSS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="caseno != null" >
+        #{caseno,jdbcType=VARCHAR},
+      </if>
+      <if test="casename != null" >
+        #{casename,jdbcType=VARCHAR},
+      </if>
+      <if test="casereason != null" >
+        #{casereason,jdbcType=VARCHAR},
+      </if>
+      <if test="caseval != null" >
+        #{caseval,jdbcType=DECIMAL},
+      </if>
+      <if test="appprocedure != null" >
+        #{appprocedure,jdbcType=CHAR},
+      </if>
+      <if test="illegacttype != null" >
+        #{illegacttype,jdbcType=VARCHAR},
+      </if>
+      <if test="illegacttypeName != null" >
+        #{illegacttypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="quabasis != null" >
+        #{quabasis,jdbcType=VARCHAR},
+      </if>
+      <if test="quabasisName != null" >
+        #{quabasisName,jdbcType=VARCHAR},
+      </if>
+      <if test="illegincome != null" >
+        #{illegincome,jdbcType=DECIMAL},
+      </if>
+      <if test="pentype != null" >
+        #{pentype,jdbcType=VARCHAR},
+      </if>
+      <if test="pentypeName != null" >
+        #{pentypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="penresult != null" >
+        #{penresult,jdbcType=VARCHAR},
+      </if>
+      <if test="penresultName != null" >
+        #{penresultName,jdbcType=VARCHAR},
+      </if>
+      <if test="penam != null" >
+        #{penam,jdbcType=DECIMAL},
+      </if>
+      <if test="forfam != null" >
+        #{forfam,jdbcType=DECIMAL},
+      </if>
+      <if test="apprcuram != null" >
+        #{apprcuram,jdbcType=DECIMAL},
+      </if>
+      <if test="penwritno != null" >
+        #{penwritno,jdbcType=VARCHAR},
+      </if>
+      <if test="pendecissdate != null" >
+        #{pendecissdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fedbacsta != null" >
+        #{fedbacsta,jdbcType=VARCHAR},
+      </if>
+      <if test="caseorg != null" >
+        #{caseorg,jdbcType=VARCHAR},
+      </if>
+      <if test="caseorgName != null" >
+        #{caseorgName,jdbcType=VARCHAR},
+      </if>
+      <if test="penexest != null" >
+        #{penexest,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="stateName != null" >
+        #{stateName,jdbcType=VARCHAR},
+      </if>
+      <if test="clocasedate != null" >
+        #{clocasedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clocaserea != null" >
+        #{clocaserea,jdbcType=VARCHAR},
+      </if>
+      <if test="clocasereaname != null" >
+        #{clocasereaname,jdbcType=VARCHAR},
+      </if>
+      <if test="accptranfauthtype != null" >
+        #{accptranfauthtype,jdbcType=VARCHAR},
+      </if>
+      <if test="accptranfauthtypename != null" >
+        #{accptranfauthtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="accptranfauth != null" >
+        #{accptranfauth,jdbcType=VARCHAR},
+      </if>
+      <if test="tranfreatype != null" >
+        #{tranfreatype,jdbcType=VARCHAR},
+      </if>
+      <if test="tranfreatypename != null" >
+        #{tranfreatypename,jdbcType=VARCHAR},
+      </if>
+      <if test="tranfrea != null" >
+        #{tranfrea,jdbcType=VARCHAR},
+      </if>
+      <if test="tranfdate != null" >
+        #{tranfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pripid != null" >
+        #{pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="casefidate != null" >
+        #{casefidate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caseenddate != null" >
+        #{caseenddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="casescedistrict != null" >
+        #{casescedistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="casescedisname != null" >
+        #{casescedisname,jdbcType=VARCHAR},
+      </if>
+      <if test="casespot != null" >
+        #{casespot,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cerno != null" >
+        #{cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="adsign != null" >
+        #{adsign,jdbcType=VARCHAR},
+      </if>
+      <if test="proerlerep != null" >
+        #{proerlerep,jdbcType=VARCHAR},
+      </if>
+      <if test="commeaco != null" >
+        #{commeaco,jdbcType=VARCHAR},
+      </if>
+      <if test="commeaconame != null" >
+        #{commeaconame,jdbcType=VARCHAR},
+      </if>
+      <if test="casetype != null" >
+        #{casetype,jdbcType=VARCHAR},
+      </if>
+      <if test="fileno != null" >
+        #{fileno,jdbcType=VARCHAR},
+      </if>
+      <if test="casefiauth != null" >
+        #{casefiauth,jdbcType=VARCHAR},
+      </if>
+      <if test="casefiauthName != null" >
+        #{casefiauthName,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="entcat != null" >
+        #{entcat,jdbcType=VARCHAR},
+      </if>
+      <if test="industryphy != null" >
+        #{industryphy,jdbcType=VARCHAR},
+      </if>
+      <if test="isfy != null" >
+        #{isfy,jdbcType=CHAR},
+      </if>
+      <if test="industryco != null" >
+        #{industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="istz != null" >
+        #{istz,jdbcType=CHAR},
+      </if>
+      <if test="isgs != null" >
+        #{isgs,jdbcType=CHAR},
+      </if>
+      <if test="caseid != null" >
+        #{caseid,jdbcType=VARCHAR},
+      </if>
+      <if test="isss != null" >
+        #{isss,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsyw.ZfglCfJbxxExample" resultType="java.lang.Integer" >
+    select count(*) from TAGSYW.ZFGL_CF_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TAGSYW.ZFGL_CF_JBXX
+    <set >
+      <if test="record.caseno != null" >
+        CASENO = #{record.caseno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casename != null" >
+        CASENAME = #{record.casename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casereason != null" >
+        CASEREASON = #{record.casereason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.caseval != null" >
+        CASEVAL = #{record.caseval,jdbcType=DECIMAL},
+      </if>
+      <if test="record.appprocedure != null" >
+        APPPROCEDURE = #{record.appprocedure,jdbcType=CHAR},
+      </if>
+      <if test="record.illegacttype != null" >
+        ILLEGACTTYPE = #{record.illegacttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.illegacttypeName != null" >
+        ILLEGACTTYPE_NAME = #{record.illegacttypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quabasis != null" >
+        QUABASIS = #{record.quabasis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quabasisName != null" >
+        QUABASIS_NAME = #{record.quabasisName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.illegincome != null" >
+        ILLEGINCOME = #{record.illegincome,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pentype != null" >
+        PENTYPE = #{record.pentype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pentypeName != null" >
+        PENTYPE_NAME = #{record.pentypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.penresult != null" >
+        PENRESULT = #{record.penresult,jdbcType=VARCHAR},
+      </if>
+      <if test="record.penresultName != null" >
+        PENRESULT_NAME = #{record.penresultName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.penam != null" >
+        PENAM = #{record.penam,jdbcType=DECIMAL},
+      </if>
+      <if test="record.forfam != null" >
+        FORFAM = #{record.forfam,jdbcType=DECIMAL},
+      </if>
+      <if test="record.apprcuram != null" >
+        APPRCURAM = #{record.apprcuram,jdbcType=DECIMAL},
+      </if>
+      <if test="record.penwritno != null" >
+        PENWRITNO = #{record.penwritno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pendecissdate != null" >
+        PENDECISSDATE = #{record.pendecissdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.fedbacsta != null" >
+        FEDBACSTA = #{record.fedbacsta,jdbcType=VARCHAR},
+      </if>
+      <if test="record.caseorg != null" >
+        CASEORG = #{record.caseorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.caseorgName != null" >
+        CASEORG_NAME = #{record.caseorgName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.penexest != null" >
+        PENEXEST = #{record.penexest,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stateName != null" >
+        STATE_NAME = #{record.stateName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clocasedate != null" >
+        CLOCASEDATE = #{record.clocasedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.clocaserea != null" >
+        CLOCASEREA = #{record.clocaserea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clocasereaname != null" >
+        CLOCASEREANAME = #{record.clocasereaname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accptranfauthtype != null" >
+        ACCPTRANFAUTHTYPE = #{record.accptranfauthtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accptranfauthtypename != null" >
+        ACCPTRANFAUTHTYPENAME = #{record.accptranfauthtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accptranfauth != null" >
+        ACCPTRANFAUTH = #{record.accptranfauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranfreatype != null" >
+        TRANFREATYPE = #{record.tranfreatype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranfreatypename != null" >
+        TRANFREATYPENAME = #{record.tranfreatypename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranfrea != null" >
+        TRANFREA = #{record.tranfrea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tranfdate != null" >
+        TRANFDATE = #{record.tranfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pripid != null" >
+        PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casefidate != null" >
+        CASEFIDATE = #{record.casefidate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.caseenddate != null" >
+        CASEENDDATE = #{record.caseenddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.casescedistrict != null" >
+        CASESCEDISTRICT = #{record.casescedistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casescedisname != null" >
+        CASESCEDISNAME = #{record.casescedisname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casespot != null" >
+        CASESPOT = #{record.casespot,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cerno != null" >
+        CERNO = #{record.cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adsign != null" >
+        ADSIGN = #{record.adsign,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proerlerep != null" >
+        PROERLEREP = #{record.proerlerep,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commeaco != null" >
+        COMMEACO = #{record.commeaco,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commeaconame != null" >
+        COMMEACONAME = #{record.commeaconame,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casetype != null" >
+        CASETYPE = #{record.casetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileno != null" >
+        FILENO = #{record.fileno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casefiauth != null" >
+        CASEFIAUTH = #{record.casefiauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.casefiauthName != null" >
+        CASEFIAUTH_NAME = #{record.casefiauthName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null" >
+        TEL = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entcat != null" >
+        ENTCAT = #{record.entcat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryphy != null" >
+        INDUSTRYPHY = #{record.industryphy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isfy != null" >
+        ISFY = #{record.isfy,jdbcType=CHAR},
+      </if>
+      <if test="record.industryco != null" >
+        INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="record.istz != null" >
+        ISTZ = #{record.istz,jdbcType=CHAR},
+      </if>
+      <if test="record.isgs != null" >
+        ISGS = #{record.isgs,jdbcType=CHAR},
+      </if>
+      <if test="record.caseid != null" >
+        CASEID = #{record.caseid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isss != null" >
+        ISSS = #{record.isss,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TAGSYW.ZFGL_CF_JBXX
+    set CASENO = #{record.caseno,jdbcType=VARCHAR},
+      CASENAME = #{record.casename,jdbcType=VARCHAR},
+      CASEREASON = #{record.casereason,jdbcType=VARCHAR},
+      CASEVAL = #{record.caseval,jdbcType=DECIMAL},
+      APPPROCEDURE = #{record.appprocedure,jdbcType=CHAR},
+      ILLEGACTTYPE = #{record.illegacttype,jdbcType=VARCHAR},
+      ILLEGACTTYPE_NAME = #{record.illegacttypeName,jdbcType=VARCHAR},
+      QUABASIS = #{record.quabasis,jdbcType=VARCHAR},
+      QUABASIS_NAME = #{record.quabasisName,jdbcType=VARCHAR},
+      ILLEGINCOME = #{record.illegincome,jdbcType=DECIMAL},
+      PENTYPE = #{record.pentype,jdbcType=VARCHAR},
+      PENTYPE_NAME = #{record.pentypeName,jdbcType=VARCHAR},
+      PENRESULT = #{record.penresult,jdbcType=VARCHAR},
+      PENRESULT_NAME = #{record.penresultName,jdbcType=VARCHAR},
+      PENAM = #{record.penam,jdbcType=DECIMAL},
+      FORFAM = #{record.forfam,jdbcType=DECIMAL},
+      APPRCURAM = #{record.apprcuram,jdbcType=DECIMAL},
+      PENWRITNO = #{record.penwritno,jdbcType=VARCHAR},
+      PENDECISSDATE = #{record.pendecissdate,jdbcType=TIMESTAMP},
+      FEDBACSTA = #{record.fedbacsta,jdbcType=VARCHAR},
+      CASEORG = #{record.caseorg,jdbcType=VARCHAR},
+      CASEORG_NAME = #{record.caseorgName,jdbcType=VARCHAR},
+      PENEXEST = #{record.penexest,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      STATE_NAME = #{record.stateName,jdbcType=VARCHAR},
+      CLOCASEDATE = #{record.clocasedate,jdbcType=TIMESTAMP},
+      CLOCASEREA = #{record.clocaserea,jdbcType=VARCHAR},
+      CLOCASEREANAME = #{record.clocasereaname,jdbcType=VARCHAR},
+      ACCPTRANFAUTHTYPE = #{record.accptranfauthtype,jdbcType=VARCHAR},
+      ACCPTRANFAUTHTYPENAME = #{record.accptranfauthtypename,jdbcType=VARCHAR},
+      ACCPTRANFAUTH = #{record.accptranfauth,jdbcType=VARCHAR},
+      TRANFREATYPE = #{record.tranfreatype,jdbcType=VARCHAR},
+      TRANFREATYPENAME = #{record.tranfreatypename,jdbcType=VARCHAR},
+      TRANFREA = #{record.tranfrea,jdbcType=VARCHAR},
+      TRANFDATE = #{record.tranfdate,jdbcType=TIMESTAMP},
+      PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      CASEFIDATE = #{record.casefidate,jdbcType=TIMESTAMP},
+      CASEENDDATE = #{record.caseenddate,jdbcType=TIMESTAMP},
+      CASESCEDISTRICT = #{record.casescedistrict,jdbcType=VARCHAR},
+      CASESCEDISNAME = #{record.casescedisname,jdbcType=VARCHAR},
+      CASESPOT = #{record.casespot,jdbcType=VARCHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CERNO = #{record.cerno,jdbcType=VARCHAR},
+      ADSIGN = #{record.adsign,jdbcType=VARCHAR},
+      PROERLEREP = #{record.proerlerep,jdbcType=VARCHAR},
+      COMMEACO = #{record.commeaco,jdbcType=VARCHAR},
+      COMMEACONAME = #{record.commeaconame,jdbcType=VARCHAR},
+      CASETYPE = #{record.casetype,jdbcType=VARCHAR},
+      FILENO = #{record.fileno,jdbcType=VARCHAR},
+      CASEFIAUTH = #{record.casefiauth,jdbcType=VARCHAR},
+      CASEFIAUTH_NAME = #{record.casefiauthName,jdbcType=VARCHAR},
+      TEL = #{record.tel,jdbcType=VARCHAR},
+      ENTCAT = #{record.entcat,jdbcType=VARCHAR},
+      INDUSTRYPHY = #{record.industryphy,jdbcType=VARCHAR},
+      ISFY = #{record.isfy,jdbcType=CHAR},
+      INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      ISTZ = #{record.istz,jdbcType=CHAR},
+      ISGS = #{record.isgs,jdbcType=CHAR},
+      CASEID = #{record.caseid,jdbcType=VARCHAR},
+      ISSS = #{record.isss,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+  <select id="selectZfbaqkData" resultType="java.util.Map" >
+	select 
+     count(case when to_char(t.casefidate,'yyyy') = to_char(sysdate,'yyyy')  then 1 else null end) as bndla,
+     count(case when to_char(t.caseenddate,'yyyy') = to_char(sysdate,'yyyy')  then 1 else null end) as bndja,
+     sum(case when to_char(t.caseenddate,'yyyy') = to_char(sysdate,'yyyy') then t.penam else 0 end) as bndfk
+	from zfgl_cf_jbxx t
+  </select>
+  <select id="selectAjlxfxData" resultType="java.util.Map" >
+	SELECT 	B.NOTE as ITEM_VALUE,
+	       (CASE WHEN B.NOTE = 'A' THEN
+		          '主体准入'
+		         WHEN B.NOTE = 'B' THEN
+		          '竞争执法'
+		         WHEN B.NOTE = 'C' THEN
+		          '消费权益保护'
+		         WHEN B.NOTE = 'D' THEN
+		          '无照经营'
+		         WHEN B.NOTE = 'E' THEN
+		          '市场监管'
+		         WHEN B.NOTE = 'F' THEN
+		          '合同监管'
+		         WHEN B.NOTE = 'G' THEN
+		          '广告监管'
+		         WHEN B.NOTE = 'H' THEN
+		          '商标监管'
+		         ELSE
+		          ''
+		       END) AS ITEM_NAME,
+	       NVL(COUNT(A.CASENO),0) as CASECOUNT
+    FROM ZFGL_CF_JBXX A
+   LEFT JOIN PUB_DICT_ITEM B
+      ON A.ILLEGACTTYPE = B.ITEM_VALUE
+   WHERE B.ITEM_VALUE IS NOT NULL
+     AND B.NOTE IS NOT NULL
+     AND B.DIC_TYPE = 'ILLEGACTTYPE'
+     AND A.STATE IN ('50','75','80','81','85')
+      and to_char(a.CaseEndDate,'YYYY-MM-DD')  &gt;=  (to_char(sysdate,'YYYY')||'-01-01')
+     and to_char(a.CaseEndDate,'YYYY-MM-DD')  &lt;=  to_char(sysdate,'YYYY-MM-DD')
+   GROUP BY B.NOTE,(CASE WHEN B.NOTE = 'A' THEN
+              '主体准入'
+             WHEN B.NOTE = 'B' THEN
+              '竞争执法'
+             WHEN B.NOTE = 'C' THEN
+              '消费权益保护'
+             WHEN B.NOTE = 'D' THEN
+              '无照经营'
+             WHEN B.NOTE = 'E' THEN
+              '市场监管'
+             WHEN B.NOTE = 'F' THEN
+              '合同监管'
+             WHEN B.NOTE = 'G' THEN
+              '广告监管'
+             WHEN B.NOTE = 'H' THEN
+              '商标监管'
+             ELSE
+              ''
+           END)
+   ORDER BY B.NOTE,(CASE WHEN B.NOTE = 'A' THEN
+              '主体准入'
+             WHEN B.NOTE = 'B' THEN
+              '竞争执法'
+             WHEN B.NOTE = 'C' THEN
+              '消费权益保护'
+             WHEN B.NOTE = 'D' THEN
+              '无照经营'
+             WHEN B.NOTE = 'E' THEN
+              '市场监管'
+             WHEN B.NOTE = 'F' THEN
+              '合同监管'
+             WHEN B.NOTE = 'G' THEN
+              '广告监管'
+             WHEN B.NOTE = 'H' THEN
+              '商标监管'
+             ELSE
+              ''
+           END)
+  </select>
+  <select id="selectAjqsfxData" resultType="java.util.Map" >
+  	SELECT CASEINFO.ENDYEAR AS NAME,
+         COUNT(1)  AS VALUE
+    FROM (SELECT FK.ILLEGACTTYPE,
+                 FK.CASEORG AS ORGANCODE,
+                 NVL(FK.PENAM, 0) + NVL(FK.FORFAM, 0) AS PFAM,
+                 FK.ILLEGACTTYPE,
+                 FK.CASEVAL,
+                 TO_CHAR(FK.CASEENDDATE, 'YYYY-MM-DD') AS ENDDATE,
+                 TO_CHAR(FK.CASEENDDATE, 'YYYY-MM') AS ENDMONTH,
+                 TO_CHAR(FK.CASEENDDATE, 'YYYY') AS ENDYEAR,
+                 (SELECT NOTE
+                    FROM PUB_DICT_ITEM DIC
+                   WHERE DIC.DIC_TYPE = UPPER('ILLEGACTTYPE')
+                     AND DIC.ITEM_VALUE = FK.ILLEGACTTYPE) AS TYPE
+            FROM ZFGL_CF_JBXX FK
+           WHERE  FK.STATE IN ('50','75','80','81','85')
+          ) CASEINFO
+         WHERE CASEINFO.ENDYEAR &gt;= '2015'
+             AND CASEINFO.ENDYEAR &lt;= to_char(sysdate,'yyyy')
+             AND CASEINFO.ORGANCODE LIKE '3709%'
+        GROUP BY CASEINFO.ENDYEAR
+       ORDER BY CASEINFO.ENDYEAR
+  </select>
+  <select id="selectGqxzfsjfxData" parameterType="map" resultType="java.util.Map" >
+  	SELECT 
+	 	 NVL(CASEFIAUTH,'CASEFIAUTH') AS ORGAN_CODE,
+	 	 NVL(CASEFIAUTH_NAME,'问题数据') AS ORGAN_NAME,
+	     COUNT(1) AS COUNT,
+         ROUND(SUM(NVL(PENAM, 0) + NVL(FORFAM, 0)),2) AS PEAFM,
+         ROUND(SUM(CASEVAL),2) AS CASEVAL,
+         ROUND(AVG(NVL(CASEVAL,0)),2) AS AVGCASEVAL
+    FROM (SELECT CF.*,
+                 (SELECT NOTE
+                    FROM PUB_DICT_ITEM DIC
+                   WHERE DIC.DIC_TYPE = 'ILLEGACTTYPE'
+                     AND CF.ILLEGACTTYPE = DIC.ITEM_VALUE) AS LX
+            FROM ZFGL_CF_JBXX CF
+           WHERE CF.STATE IN ('50', '75', '80', '81', '85')
+          )
+    WHERE
+    	<if test="type=='bq'">
+    		TO_CHAR(CASEENDDATE,'YYYY-MM-DD')  &gt;=  to_char(sysdate,'YYYY')||'-01-01'
+          	AND TO_CHAR(CASEENDDATE,'YYYY-MM-DD') &lt;= to_char(sysdate,'YYYY-MM-DD')
+    	</if> 
+    	<if test="type=='tq'">
+    		TO_CHAR(CASEENDDATE,'YYYY-MM-DD')  &gt;=  to_char(ADD_MONTHS(sysdate,-12),'YYYY')||'-01-01'
+          	AND TO_CHAR(CASEENDDATE,'YYYY-MM-DD') &lt;= to_char(ADD_MONTHS(sysdate,-12),'YYYY-MM-DD')
+    	</if> 
+   GROUP BY CASEFIAUTH,CASEFIAUTH_NAME
+   ORDER BY COUNT(1) DESC
+  </select>
+  <select id="selectNdData" resultType="java.util.Map" >
+  	select count(*) as lasl,
+       count(case when jbxx.state_name ='已结案' then 1 else null end) as jasl,
+       count(case when jbxx.state_name is null then 1 else null end) as zbaj,
+       count(case when jbxx.casetype='1' then 1 else null end) as daya,
+       sum(NVL(jbxx.PENAM, 0)) as fkje
+	  from ZFGL_CF_JBXX jbxx
+	 where 
+	 to_char(jbxx.casefidate, 'yyyy-mm-dd') &lt;= to_char(sysdate, 'yyyy-mm-dd')
+	 and to_char(jbxx.casefidate, 'yyyy-mm-dd') >= to_char(sysdate, 'yyyy')||'-01-01'
+  </select>
+  <select id="selectNdTqData" resultType="java.util.Map" >
+  	select count(*) as lasl,
+       count(case when jbxx.state_name ='已结案' then 1 else null end) as jasl,
+       count(case when jbxx.state_name is null then 1 else null end) as zbaj,
+       count(case when jbxx.casetype='1' then 1 else null end) as daya,
+       sum(NVL(jbxx.PENAM, 0)) as fkje
+	  from ZFGL_CF_JBXX jbxx
+	 where 
+	 to_char(jbxx.casefidate, 'yyyy-mm-dd') &lt;= to_char(ADD_MONTHS(sysdate,-12), 'yyyy-mm-dd')
+	 and to_char(jbxx.casefidate, 'yyyy-mm-dd') >= to_char(ADD_MONTHS(sysdate,-12), 'yyyy')||'-01-01'
+  </select>
+</mapper>

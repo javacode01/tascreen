@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsyw.PubOrganMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsyw.PubOrgan" >
+    <id column="ORGAN_CODE" property="organCode" jdbcType="VARCHAR" />
+    <result column="ORGAN_NAME" property="organName" jdbcType="VARCHAR" />
+    <result column="PARENT_CODE" property="parentCode" jdbcType="VARCHAR" />
+    <result column="ORGAN_PATH" property="organPath" jdbcType="VARCHAR" />
+    <result column="SEQ" property="seq" jdbcType="DECIMAL" />
+    <result column="ORGAN_TYPE" property="organType" jdbcType="VARCHAR" />
+    <result column="ORGAN_CLASS" property="organClass" jdbcType="VARCHAR" />
+    <result column="IS_ORG_DEP" property="isOrgDep" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ORGAN_CODE, ORGAN_NAME, PARENT_CODE, ORGAN_PATH, SEQ, ORGAN_TYPE, ORGAN_CLASS, IS_ORG_DEP
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsyw.PubOrganExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TAGSYW.PUB_ORGAN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TAGSYW.PUB_ORGAN
+    where ORGAN_CODE = #{organCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TAGSYW.PUB_ORGAN
+    where ORGAN_CODE = #{organCode,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsyw.PubOrganExample" >
+    delete from TAGSYW.PUB_ORGAN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsyw.PubOrgan" >
+    insert into TAGSYW.PUB_ORGAN (ORGAN_CODE, ORGAN_NAME, PARENT_CODE, 
+      ORGAN_PATH, SEQ, ORGAN_TYPE, 
+      ORGAN_CLASS, IS_ORG_DEP)
+    values (#{organCode,jdbcType=VARCHAR}, #{organName,jdbcType=VARCHAR}, #{parentCode,jdbcType=VARCHAR}, 
+      #{organPath,jdbcType=VARCHAR}, #{seq,jdbcType=DECIMAL}, #{organType,jdbcType=VARCHAR}, 
+      #{organClass,jdbcType=VARCHAR}, #{isOrgDep,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsyw.PubOrgan" >
+    insert into TAGSYW.PUB_ORGAN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="organCode != null" >
+        ORGAN_CODE,
+      </if>
+      <if test="organName != null" >
+        ORGAN_NAME,
+      </if>
+      <if test="parentCode != null" >
+        PARENT_CODE,
+      </if>
+      <if test="organPath != null" >
+        ORGAN_PATH,
+      </if>
+      <if test="seq != null" >
+        SEQ,
+      </if>
+      <if test="organType != null" >
+        ORGAN_TYPE,
+      </if>
+      <if test="organClass != null" >
+        ORGAN_CLASS,
+      </if>
+      <if test="isOrgDep != null" >
+        IS_ORG_DEP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="organCode != null" >
+        #{organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organName != null" >
+        #{organName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCode != null" >
+        #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organPath != null" >
+        #{organPath,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null" >
+        #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="organType != null" >
+        #{organType,jdbcType=VARCHAR},
+      </if>
+      <if test="organClass != null" >
+        #{organClass,jdbcType=VARCHAR},
+      </if>
+      <if test="isOrgDep != null" >
+        #{isOrgDep,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsyw.PubOrganExample" resultType="java.lang.Integer" >
+    select count(*) from TAGSYW.PUB_ORGAN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TAGSYW.PUB_ORGAN
+    <set >
+      <if test="record.organCode != null" >
+        ORGAN_CODE = #{record.organCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organName != null" >
+        ORGAN_NAME = #{record.organName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentCode != null" >
+        PARENT_CODE = #{record.parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organPath != null" >
+        ORGAN_PATH = #{record.organPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seq != null" >
+        SEQ = #{record.seq,jdbcType=DECIMAL},
+      </if>
+      <if test="record.organType != null" >
+        ORGAN_TYPE = #{record.organType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organClass != null" >
+        ORGAN_CLASS = #{record.organClass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isOrgDep != null" >
+        IS_ORG_DEP = #{record.isOrgDep,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TAGSYW.PUB_ORGAN
+    set ORGAN_CODE = #{record.organCode,jdbcType=VARCHAR},
+      ORGAN_NAME = #{record.organName,jdbcType=VARCHAR},
+      PARENT_CODE = #{record.parentCode,jdbcType=VARCHAR},
+      ORGAN_PATH = #{record.organPath,jdbcType=VARCHAR},
+      SEQ = #{record.seq,jdbcType=DECIMAL},
+      ORGAN_TYPE = #{record.organType,jdbcType=VARCHAR},
+      ORGAN_CLASS = #{record.organClass,jdbcType=VARCHAR},
+      IS_ORG_DEP = #{record.isOrgDep,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yawei.model.gsyw.PubOrgan" >
+    update TAGSYW.PUB_ORGAN
+    <set >
+      <if test="organName != null" >
+        ORGAN_NAME = #{organName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCode != null" >
+        PARENT_CODE = #{parentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organPath != null" >
+        ORGAN_PATH = #{organPath,jdbcType=VARCHAR},
+      </if>
+      <if test="seq != null" >
+        SEQ = #{seq,jdbcType=DECIMAL},
+      </if>
+      <if test="organType != null" >
+        ORGAN_TYPE = #{organType,jdbcType=VARCHAR},
+      </if>
+      <if test="organClass != null" >
+        ORGAN_CLASS = #{organClass,jdbcType=VARCHAR},
+      </if>
+      <if test="isOrgDep != null" >
+        IS_ORG_DEP = #{isOrgDep,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ORGAN_CODE = #{organCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yawei.model.gsyw.PubOrgan" >
+    update TAGSYW.PUB_ORGAN
+    set ORGAN_NAME = #{organName,jdbcType=VARCHAR},
+      PARENT_CODE = #{parentCode,jdbcType=VARCHAR},
+      ORGAN_PATH = #{organPath,jdbcType=VARCHAR},
+      SEQ = #{seq,jdbcType=DECIMAL},
+      ORGAN_TYPE = #{organType,jdbcType=VARCHAR},
+      ORGAN_CLASS = #{organClass,jdbcType=VARCHAR},
+      IS_ORG_DEP = #{isOrgDep,jdbcType=VARCHAR}
+    where ORGAN_CODE = #{organCode,jdbcType=VARCHAR}
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+</mapper>

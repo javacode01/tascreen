@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsyw.NbZtJbxxMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsyw.NbZtJbxx" >
+    <result column="ANCHEID" property="ancheid" jdbcType="VARCHAR" />
+    <result column="PRIPID" property="pripid" jdbcType="VARCHAR" />
+    <result column="UNISCID" property="uniscid" jdbcType="VARCHAR" />
+    <result column="ANCHEDATE" property="anchedate" jdbcType="TIMESTAMP" />
+    <result column="ANCHEYEAR" property="ancheyear" jdbcType="VARCHAR" />
+    <result column="REGNO" property="regno" jdbcType="VARCHAR" />
+    <result column="ENTNAME" property="entname" jdbcType="VARCHAR" />
+    <result column="EMPNUM" property="empnum" jdbcType="DECIMAL" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="ADDR" property="addr" jdbcType="VARCHAR" />
+    <result column="POSTALCODE" property="postalcode" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="BUSST" property="busst" jdbcType="VARCHAR" />
+    <result column="COLGRANUM" property="colgranum" jdbcType="DECIMAL" />
+    <result column="COLEMPLNUM" property="colemplnum" jdbcType="DECIMAL" />
+    <result column="RETSOLNUM" property="retsolnum" jdbcType="DECIMAL" />
+    <result column="RETEMPLNUM" property="retemplnum" jdbcType="DECIMAL" />
+    <result column="DISPERNUM" property="dispernum" jdbcType="DECIMAL" />
+    <result column="DISEMPLNUM" property="disemplnum" jdbcType="DECIMAL" />
+    <result column="UNENUM" property="unenum" jdbcType="DECIMAL" />
+    <result column="UNEEMPLNUM" property="uneemplnum" jdbcType="DECIMAL" />
+    <result column="IFPUBEMPNUM" property="ifpubempnum" jdbcType="VARCHAR" />
+    <result column="UPDATETIME" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="IFPUB" property="ifpub" jdbcType="VARCHAR" />
+    <result column="ANCHETYPE" property="anchetype" jdbcType="VARCHAR" />
+    <result column="RELATIONTO" property="relationto" jdbcType="VARCHAR" />
+    <result column="FIRSTPUBTIME" property="firstpubtime" jdbcType="TIMESTAMP" />
+    <result column="MAINBUSIACT" property="mainbusiact" jdbcType="VARCHAR" />
+    <result column="WOMEMPNUM" property="womempnum" jdbcType="DECIMAL" />
+    <result column="HOLDINGSMSG" property="holdingsmsg" jdbcType="VARCHAR" />
+    <result column="RELATIONTOUISCID" property="relationtouiscid" jdbcType="VARCHAR" />
+    <result column="IFPUBWOMEMPNUM" property="ifpubwomempnum" jdbcType="VARCHAR" />
+    <result column="IFPUBHOLDINGSMSG" property="ifpubholdingsmsg" jdbcType="VARCHAR" />
+    <result column="REGORG" property="regorg" jdbcType="VARCHAR" />
+    <result column="REGORG_NAME" property="regorgName" jdbcType="VARCHAR" />
+    <result column="ENTTYPE" property="enttype" jdbcType="VARCHAR" />
+    <result column="ENTTYPE_NAME" property="enttypeName" jdbcType="VARCHAR" />
+    <result column="INDUSTRYPHY" property="industryphy" jdbcType="VARCHAR" />
+    <result column="INDUSTRYPHY_NAME" property="industryphyName" jdbcType="VARCHAR" />
+    <result column="INDUSTRYCO" property="industryco" jdbcType="VARCHAR" />
+    <result column="INDUSTRYCO_NAME" property="industrycoName" jdbcType="VARCHAR" />
+    <result column="LOCALADMIN" property="localadmin" jdbcType="VARCHAR" />
+    <result column="LOCALADMIN_NAME" property="localadminName" jdbcType="VARCHAR" />
+    <result column="ENTSTATUS" property="entstatus" jdbcType="VARCHAR" />
+    <result column="ENTSTATUS_NAME" property="entstatusName" jdbcType="VARCHAR" />
+    <result column="MEMNUM" property="memnum" jdbcType="DECIMAL" />
+    <result column="FARNUM" property="farnum" jdbcType="DECIMAL" />
+    <result column="ANNNEWMEMNUM" property="annnewmemnum" jdbcType="DECIMAL" />
+    <result column="ANNREDMEMNUM" property="annredmemnum" jdbcType="DECIMAL" />
+    <result column="IFHASWEB" property="ifhasweb" jdbcType="VARCHAR" />
+    <result column="ENTCAT" property="entcat" jdbcType="VARCHAR" />
+    <result column="ENTCAT_NAME" property="entcatName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ANCHEID, PRIPID, UNISCID, ANCHEDATE, ANCHEYEAR, REGNO, ENTNAME, EMPNUM, TEL, ADDR, 
+    POSTALCODE, EMAIL, BUSST, COLGRANUM, COLEMPLNUM, RETSOLNUM, RETEMPLNUM, DISPERNUM, 
+    DISEMPLNUM, UNENUM, UNEEMPLNUM, IFPUBEMPNUM, UPDATETIME, IFPUB, ANCHETYPE, RELATIONTO, 
+    FIRSTPUBTIME, MAINBUSIACT, WOMEMPNUM, HOLDINGSMSG, RELATIONTOUISCID, IFPUBWOMEMPNUM, 
+    IFPUBHOLDINGSMSG, REGORG, REGORG_NAME, ENTTYPE, ENTTYPE_NAME, INDUSTRYPHY, INDUSTRYPHY_NAME, 
+    INDUSTRYCO, INDUSTRYCO_NAME, LOCALADMIN, LOCALADMIN_NAME, ENTSTATUS, ENTSTATUS_NAME, 
+    MEMNUM, FARNUM, ANNNEWMEMNUM, ANNREDMEMNUM, IFHASWEB, ENTCAT, ENTCAT_NAME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsyw.NbZtJbxxExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TAGSYW.NB_ZT_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsyw.NbZtJbxxExample" >
+    delete from TAGSYW.NB_ZT_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsyw.NbZtJbxx" >
+    insert into TAGSYW.NB_ZT_JBXX (ANCHEID, PRIPID, UNISCID, 
+      ANCHEDATE, ANCHEYEAR, REGNO, 
+      ENTNAME, EMPNUM, TEL, 
+      ADDR, POSTALCODE, EMAIL, 
+      BUSST, COLGRANUM, COLEMPLNUM, 
+      RETSOLNUM, RETEMPLNUM, DISPERNUM, 
+      DISEMPLNUM, UNENUM, UNEEMPLNUM, 
+      IFPUBEMPNUM, UPDATETIME, IFPUB, 
+      ANCHETYPE, RELATIONTO, FIRSTPUBTIME, 
+      MAINBUSIACT, WOMEMPNUM, HOLDINGSMSG, 
+      RELATIONTOUISCID, IFPUBWOMEMPNUM, IFPUBHOLDINGSMSG, 
+      REGORG, REGORG_NAME, ENTTYPE, 
+      ENTTYPE_NAME, INDUSTRYPHY, INDUSTRYPHY_NAME, 
+      INDUSTRYCO, INDUSTRYCO_NAME, LOCALADMIN, 
+      LOCALADMIN_NAME, ENTSTATUS, ENTSTATUS_NAME, 
+      MEMNUM, FARNUM, ANNNEWMEMNUM, 
+      ANNREDMEMNUM, IFHASWEB, ENTCAT, 
+      ENTCAT_NAME)
+    values (#{ancheid,jdbcType=VARCHAR}, #{pripid,jdbcType=VARCHAR}, #{uniscid,jdbcType=VARCHAR}, 
+      #{anchedate,jdbcType=TIMESTAMP}, #{ancheyear,jdbcType=VARCHAR}, #{regno,jdbcType=VARCHAR}, 
+      #{entname,jdbcType=VARCHAR}, #{empnum,jdbcType=DECIMAL}, #{tel,jdbcType=VARCHAR}, 
+      #{addr,jdbcType=VARCHAR}, #{postalcode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{busst,jdbcType=VARCHAR}, #{colgranum,jdbcType=DECIMAL}, #{colemplnum,jdbcType=DECIMAL}, 
+      #{retsolnum,jdbcType=DECIMAL}, #{retemplnum,jdbcType=DECIMAL}, #{dispernum,jdbcType=DECIMAL}, 
+      #{disemplnum,jdbcType=DECIMAL}, #{unenum,jdbcType=DECIMAL}, #{uneemplnum,jdbcType=DECIMAL}, 
+      #{ifpubempnum,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP}, #{ifpub,jdbcType=VARCHAR}, 
+      #{anchetype,jdbcType=VARCHAR}, #{relationto,jdbcType=VARCHAR}, #{firstpubtime,jdbcType=TIMESTAMP}, 
+      #{mainbusiact,jdbcType=VARCHAR}, #{womempnum,jdbcType=DECIMAL}, #{holdingsmsg,jdbcType=VARCHAR}, 
+      #{relationtouiscid,jdbcType=VARCHAR}, #{ifpubwomempnum,jdbcType=VARCHAR}, #{ifpubholdingsmsg,jdbcType=VARCHAR}, 
+      #{regorg,jdbcType=VARCHAR}, #{regorgName,jdbcType=VARCHAR}, #{enttype,jdbcType=VARCHAR}, 
+      #{enttypeName,jdbcType=VARCHAR}, #{industryphy,jdbcType=VARCHAR}, #{industryphyName,jdbcType=VARCHAR}, 
+      #{industryco,jdbcType=VARCHAR}, #{industrycoName,jdbcType=VARCHAR}, #{localadmin,jdbcType=VARCHAR}, 
+      #{localadminName,jdbcType=VARCHAR}, #{entstatus,jdbcType=VARCHAR}, #{entstatusName,jdbcType=VARCHAR}, 
+      #{memnum,jdbcType=DECIMAL}, #{farnum,jdbcType=DECIMAL}, #{annnewmemnum,jdbcType=DECIMAL}, 
+      #{annredmemnum,jdbcType=DECIMAL}, #{ifhasweb,jdbcType=VARCHAR}, #{entcat,jdbcType=VARCHAR}, 
+      #{entcatName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsyw.NbZtJbxx" >
+    insert into TAGSYW.NB_ZT_JBXX
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ancheid != null" >
+        ANCHEID,
+      </if>
+      <if test="pripid != null" >
+        PRIPID,
+      </if>
+      <if test="uniscid != null" >
+        UNISCID,
+      </if>
+      <if test="anchedate != null" >
+        ANCHEDATE,
+      </if>
+      <if test="ancheyear != null" >
+        ANCHEYEAR,
+      </if>
+      <if test="regno != null" >
+        REGNO,
+      </if>
+      <if test="entname != null" >
+        ENTNAME,
+      </if>
+      <if test="empnum != null" >
+        EMPNUM,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="addr != null" >
+        ADDR,
+      </if>
+      <if test="postalcode != null" >
+        POSTALCODE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="busst != null" >
+        BUSST,
+      </if>
+      <if test="colgranum != null" >
+        COLGRANUM,
+      </if>
+      <if test="colemplnum != null" >
+        COLEMPLNUM,
+      </if>
+      <if test="retsolnum != null" >
+        RETSOLNUM,
+      </if>
+      <if test="retemplnum != null" >
+        RETEMPLNUM,
+      </if>
+      <if test="dispernum != null" >
+        DISPERNUM,
+      </if>
+      <if test="disemplnum != null" >
+        DISEMPLNUM,
+      </if>
+      <if test="unenum != null" >
+        UNENUM,
+      </if>
+      <if test="uneemplnum != null" >
+        UNEEMPLNUM,
+      </if>
+      <if test="ifpubempnum != null" >
+        IFPUBEMPNUM,
+      </if>
+      <if test="updatetime != null" >
+        UPDATETIME,
+      </if>
+      <if test="ifpub != null" >
+        IFPUB,
+      </if>
+      <if test="anchetype != null" >
+        ANCHETYPE,
+      </if>
+      <if test="relationto != null" >
+        RELATIONTO,
+      </if>
+      <if test="firstpubtime != null" >
+        FIRSTPUBTIME,
+      </if>
+      <if test="mainbusiact != null" >
+        MAINBUSIACT,
+      </if>
+      <if test="womempnum != null" >
+        WOMEMPNUM,
+      </if>
+      <if test="holdingsmsg != null" >
+        HOLDINGSMSG,
+      </if>
+      <if test="relationtouiscid != null" >
+        RELATIONTOUISCID,
+      </if>
+      <if test="ifpubwomempnum != null" >
+        IFPUBWOMEMPNUM,
+      </if>
+      <if test="ifpubholdingsmsg != null" >
+        IFPUBHOLDINGSMSG,
+      </if>
+      <if test="regorg != null" >
+        REGORG,
+      </if>
+      <if test="regorgName != null" >
+        REGORG_NAME,
+      </if>
+      <if test="enttype != null" >
+        ENTTYPE,
+      </if>
+      <if test="enttypeName != null" >
+        ENTTYPE_NAME,
+      </if>
+      <if test="industryphy != null" >
+        INDUSTRYPHY,
+      </if>
+      <if test="industryphyName != null" >
+        INDUSTRYPHY_NAME,
+      </if>
+      <if test="industryco != null" >
+        INDUSTRYCO,
+      </if>
+      <if test="industrycoName != null" >
+        INDUSTRYCO_NAME,
+      </if>
+      <if test="localadmin != null" >
+        LOCALADMIN,
+      </if>
+      <if test="localadminName != null" >
+        LOCALADMIN_NAME,
+      </if>
+      <if test="entstatus != null" >
+        ENTSTATUS,
+      </if>
+      <if test="entstatusName != null" >
+        ENTSTATUS_NAME,
+      </if>
+      <if test="memnum != null" >
+        MEMNUM,
+      </if>
+      <if test="farnum != null" >
+        FARNUM,
+      </if>
+      <if test="annnewmemnum != null" >
+        ANNNEWMEMNUM,
+      </if>
+      <if test="annredmemnum != null" >
+        ANNREDMEMNUM,
+      </if>
+      <if test="ifhasweb != null" >
+        IFHASWEB,
+      </if>
+      <if test="entcat != null" >
+        ENTCAT,
+      </if>
+      <if test="entcatName != null" >
+        ENTCAT_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ancheid != null" >
+        #{ancheid,jdbcType=VARCHAR},
+      </if>
+      <if test="pripid != null" >
+        #{pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="uniscid != null" >
+        #{uniscid,jdbcType=VARCHAR},
+      </if>
+      <if test="anchedate != null" >
+        #{anchedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ancheyear != null" >
+        #{ancheyear,jdbcType=VARCHAR},
+      </if>
+      <if test="regno != null" >
+        #{regno,jdbcType=VARCHAR},
+      </if>
+      <if test="entname != null" >
+        #{entname,jdbcType=VARCHAR},
+      </if>
+      <if test="empnum != null" >
+        #{empnum,jdbcType=DECIMAL},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="postalcode != null" >
+        #{postalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="busst != null" >
+        #{busst,jdbcType=VARCHAR},
+      </if>
+      <if test="colgranum != null" >
+        #{colgranum,jdbcType=DECIMAL},
+      </if>
+      <if test="colemplnum != null" >
+        #{colemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="retsolnum != null" >
+        #{retsolnum,jdbcType=DECIMAL},
+      </if>
+      <if test="retemplnum != null" >
+        #{retemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="dispernum != null" >
+        #{dispernum,jdbcType=DECIMAL},
+      </if>
+      <if test="disemplnum != null" >
+        #{disemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="unenum != null" >
+        #{unenum,jdbcType=DECIMAL},
+      </if>
+      <if test="uneemplnum != null" >
+        #{uneemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="ifpubempnum != null" >
+        #{ifpubempnum,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ifpub != null" >
+        #{ifpub,jdbcType=VARCHAR},
+      </if>
+      <if test="anchetype != null" >
+        #{anchetype,jdbcType=VARCHAR},
+      </if>
+      <if test="relationto != null" >
+        #{relationto,jdbcType=VARCHAR},
+      </if>
+      <if test="firstpubtime != null" >
+        #{firstpubtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mainbusiact != null" >
+        #{mainbusiact,jdbcType=VARCHAR},
+      </if>
+      <if test="womempnum != null" >
+        #{womempnum,jdbcType=DECIMAL},
+      </if>
+      <if test="holdingsmsg != null" >
+        #{holdingsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="relationtouiscid != null" >
+        #{relationtouiscid,jdbcType=VARCHAR},
+      </if>
+      <if test="ifpubwomempnum != null" >
+        #{ifpubwomempnum,jdbcType=VARCHAR},
+      </if>
+      <if test="ifpubholdingsmsg != null" >
+        #{ifpubholdingsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="regorg != null" >
+        #{regorg,jdbcType=VARCHAR},
+      </if>
+      <if test="regorgName != null" >
+        #{regorgName,jdbcType=VARCHAR},
+      </if>
+      <if test="enttype != null" >
+        #{enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="enttypeName != null" >
+        #{enttypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryphy != null" >
+        #{industryphy,jdbcType=VARCHAR},
+      </if>
+      <if test="industryphyName != null" >
+        #{industryphyName,jdbcType=VARCHAR},
+      </if>
+      <if test="industryco != null" >
+        #{industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="industrycoName != null" >
+        #{industrycoName,jdbcType=VARCHAR},
+      </if>
+      <if test="localadmin != null" >
+        #{localadmin,jdbcType=VARCHAR},
+      </if>
+      <if test="localadminName != null" >
+        #{localadminName,jdbcType=VARCHAR},
+      </if>
+      <if test="entstatus != null" >
+        #{entstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="entstatusName != null" >
+        #{entstatusName,jdbcType=VARCHAR},
+      </if>
+      <if test="memnum != null" >
+        #{memnum,jdbcType=DECIMAL},
+      </if>
+      <if test="farnum != null" >
+        #{farnum,jdbcType=DECIMAL},
+      </if>
+      <if test="annnewmemnum != null" >
+        #{annnewmemnum,jdbcType=DECIMAL},
+      </if>
+      <if test="annredmemnum != null" >
+        #{annredmemnum,jdbcType=DECIMAL},
+      </if>
+      <if test="ifhasweb != null" >
+        #{ifhasweb,jdbcType=VARCHAR},
+      </if>
+      <if test="entcat != null" >
+        #{entcat,jdbcType=VARCHAR},
+      </if>
+      <if test="entcatName != null" >
+        #{entcatName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsyw.NbZtJbxxExample" resultType="java.lang.Integer" >
+    select count(*) from TAGSYW.NB_ZT_JBXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TAGSYW.NB_ZT_JBXX
+    <set >
+      <if test="record.ancheid != null" >
+        ANCHEID = #{record.ancheid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pripid != null" >
+        PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uniscid != null" >
+        UNISCID = #{record.uniscid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anchedate != null" >
+        ANCHEDATE = #{record.anchedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ancheyear != null" >
+        ANCHEYEAR = #{record.ancheyear,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regno != null" >
+        REGNO = #{record.regno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entname != null" >
+        ENTNAME = #{record.entname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empnum != null" >
+        EMPNUM = #{record.empnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.tel != null" >
+        TEL = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addr != null" >
+        ADDR = #{record.addr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.postalcode != null" >
+        POSTALCODE = #{record.postalcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busst != null" >
+        BUSST = #{record.busst,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colgranum != null" >
+        COLGRANUM = #{record.colgranum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.colemplnum != null" >
+        COLEMPLNUM = #{record.colemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.retsolnum != null" >
+        RETSOLNUM = #{record.retsolnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.retemplnum != null" >
+        RETEMPLNUM = #{record.retemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dispernum != null" >
+        DISPERNUM = #{record.dispernum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.disemplnum != null" >
+        DISEMPLNUM = #{record.disemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.unenum != null" >
+        UNENUM = #{record.unenum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.uneemplnum != null" >
+        UNEEMPLNUM = #{record.uneemplnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ifpubempnum != null" >
+        IFPUBEMPNUM = #{record.ifpubempnum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatetime != null" >
+        UPDATETIME = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ifpub != null" >
+        IFPUB = #{record.ifpub,jdbcType=VARCHAR},
+      </if>
+      <if test="record.anchetype != null" >
+        ANCHETYPE = #{record.anchetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relationto != null" >
+        RELATIONTO = #{record.relationto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firstpubtime != null" >
+        FIRSTPUBTIME = #{record.firstpubtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mainbusiact != null" >
+        MAINBUSIACT = #{record.mainbusiact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.womempnum != null" >
+        WOMEMPNUM = #{record.womempnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.holdingsmsg != null" >
+        HOLDINGSMSG = #{record.holdingsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relationtouiscid != null" >
+        RELATIONTOUISCID = #{record.relationtouiscid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifpubwomempnum != null" >
+        IFPUBWOMEMPNUM = #{record.ifpubwomempnum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifpubholdingsmsg != null" >
+        IFPUBHOLDINGSMSG = #{record.ifpubholdingsmsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regorg != null" >
+        REGORG = #{record.regorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regorgName != null" >
+        REGORG_NAME = #{record.regorgName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enttype != null" >
+        ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enttypeName != null" >
+        ENTTYPE_NAME = #{record.enttypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryphy != null" >
+        INDUSTRYPHY = #{record.industryphy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryphyName != null" >
+        INDUSTRYPHY_NAME = #{record.industryphyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryco != null" >
+        INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industrycoName != null" >
+        INDUSTRYCO_NAME = #{record.industrycoName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localadmin != null" >
+        LOCALADMIN = #{record.localadmin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.localadminName != null" >
+        LOCALADMIN_NAME = #{record.localadminName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entstatus != null" >
+        ENTSTATUS = #{record.entstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entstatusName != null" >
+        ENTSTATUS_NAME = #{record.entstatusName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memnum != null" >
+        MEMNUM = #{record.memnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.farnum != null" >
+        FARNUM = #{record.farnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.annnewmemnum != null" >
+        ANNNEWMEMNUM = #{record.annnewmemnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.annredmemnum != null" >
+        ANNREDMEMNUM = #{record.annredmemnum,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ifhasweb != null" >
+        IFHASWEB = #{record.ifhasweb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entcat != null" >
+        ENTCAT = #{record.entcat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entcatName != null" >
+        ENTCAT_NAME = #{record.entcatName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TAGSYW.NB_ZT_JBXX
+    set ANCHEID = #{record.ancheid,jdbcType=VARCHAR},
+      PRIPID = #{record.pripid,jdbcType=VARCHAR},
+      UNISCID = #{record.uniscid,jdbcType=VARCHAR},
+      ANCHEDATE = #{record.anchedate,jdbcType=TIMESTAMP},
+      ANCHEYEAR = #{record.ancheyear,jdbcType=VARCHAR},
+      REGNO = #{record.regno,jdbcType=VARCHAR},
+      ENTNAME = #{record.entname,jdbcType=VARCHAR},
+      EMPNUM = #{record.empnum,jdbcType=DECIMAL},
+      TEL = #{record.tel,jdbcType=VARCHAR},
+      ADDR = #{record.addr,jdbcType=VARCHAR},
+      POSTALCODE = #{record.postalcode,jdbcType=VARCHAR},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      BUSST = #{record.busst,jdbcType=VARCHAR},
+      COLGRANUM = #{record.colgranum,jdbcType=DECIMAL},
+      COLEMPLNUM = #{record.colemplnum,jdbcType=DECIMAL},
+      RETSOLNUM = #{record.retsolnum,jdbcType=DECIMAL},
+      RETEMPLNUM = #{record.retemplnum,jdbcType=DECIMAL},
+      DISPERNUM = #{record.dispernum,jdbcType=DECIMAL},
+      DISEMPLNUM = #{record.disemplnum,jdbcType=DECIMAL},
+      UNENUM = #{record.unenum,jdbcType=DECIMAL},
+      UNEEMPLNUM = #{record.uneemplnum,jdbcType=DECIMAL},
+      IFPUBEMPNUM = #{record.ifpubempnum,jdbcType=VARCHAR},
+      UPDATETIME = #{record.updatetime,jdbcType=TIMESTAMP},
+      IFPUB = #{record.ifpub,jdbcType=VARCHAR},
+      ANCHETYPE = #{record.anchetype,jdbcType=VARCHAR},
+      RELATIONTO = #{record.relationto,jdbcType=VARCHAR},
+      FIRSTPUBTIME = #{record.firstpubtime,jdbcType=TIMESTAMP},
+      MAINBUSIACT = #{record.mainbusiact,jdbcType=VARCHAR},
+      WOMEMPNUM = #{record.womempnum,jdbcType=DECIMAL},
+      HOLDINGSMSG = #{record.holdingsmsg,jdbcType=VARCHAR},
+      RELATIONTOUISCID = #{record.relationtouiscid,jdbcType=VARCHAR},
+      IFPUBWOMEMPNUM = #{record.ifpubwomempnum,jdbcType=VARCHAR},
+      IFPUBHOLDINGSMSG = #{record.ifpubholdingsmsg,jdbcType=VARCHAR},
+      REGORG = #{record.regorg,jdbcType=VARCHAR},
+      REGORG_NAME = #{record.regorgName,jdbcType=VARCHAR},
+      ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      ENTTYPE_NAME = #{record.enttypeName,jdbcType=VARCHAR},
+      INDUSTRYPHY = #{record.industryphy,jdbcType=VARCHAR},
+      INDUSTRYPHY_NAME = #{record.industryphyName,jdbcType=VARCHAR},
+      INDUSTRYCO = #{record.industryco,jdbcType=VARCHAR},
+      INDUSTRYCO_NAME = #{record.industrycoName,jdbcType=VARCHAR},
+      LOCALADMIN = #{record.localadmin,jdbcType=VARCHAR},
+      LOCALADMIN_NAME = #{record.localadminName,jdbcType=VARCHAR},
+      ENTSTATUS = #{record.entstatus,jdbcType=VARCHAR},
+      ENTSTATUS_NAME = #{record.entstatusName,jdbcType=VARCHAR},
+      MEMNUM = #{record.memnum,jdbcType=DECIMAL},
+      FARNUM = #{record.farnum,jdbcType=DECIMAL},
+      ANNNEWMEMNUM = #{record.annnewmemnum,jdbcType=DECIMAL},
+      ANNREDMEMNUM = #{record.annredmemnum,jdbcType=DECIMAL},
+      IFHASWEB = #{record.ifhasweb,jdbcType=VARCHAR},
+      ENTCAT = #{record.entcat,jdbcType=VARCHAR},
+      ENTCAT_NAME = #{record.entcatName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+  <select id="selectNbjkData" resultType="java.util.Map" >
+	  select  
+		  count(case when t.entcat in(1,2,8) and t.ifpub in(2,3,5) then 1 else null end) as qyyb,
+		  count(case when t.entcat in(1,2,8) and t.ifpub in(0,1) then 1 else null end) as qywb,
+		  count(case when t.entcat = 5 and t.ifpub in(2,3,5) then 1 else null end) as gtyb,
+		  count(case when t.entcat = 5 and t.ifpub in(0,1) then 1 else null end) as gtwb,
+		  count(case when t.entcat = 6 and t.ifpub in(2,3,5) then 1 else null end) as nhyb,
+		  count(case when t.entcat = 6 and t.ifpub in(0,1) then 1 else null end) as nhwb
+		from NB_ZT_JBXX t where ANCHEYEAR=to_char(ADD_MONTHS(sysdate, -12),'yyyy') AND ENTSTATUS = 1
+  </select>
+  <select id="selectGxqnbqkData" resultType="java.util.Map" >
+	 select REGORG as ORG,IFPUB, count(1) as NUM 
+	    from NB_ZT_JBXX
+	    where entcat in(1,2,8,6,5) AND ANCHEYEAR=to_char(ADD_MONTHS(sysdate,-12),'yyyy') AND ENTSTATUS = 1
+	    group by REGORG,IFPUB
+  </select>
+  <select id="selectNdqsnbqkData" resultType="java.util.Map" >
+	 select  
+		count(case when t.entcat in(1,2,8) and t.ifpub in(2,3,5) then 1 else null end) as "qyyb",
+		count(case when t.entcat in(1,2,8) and t.ifpub in(0,1) then 1 else null end) as "qywb",
+		count(case when t.entcat = 5 and t.ifpub in(2,3,5) then 1 else null end) as "gtyb",
+	    count(case when t.entcat = 5 and t.ifpub in(0,1) then 1 else null end) as "gtwb",
+	    count(case when t.entcat = 6 and t.ifpub in(2,3,5) then 1 else null end) as "nhyb",
+	    count(case when t.entcat = 6 and t.ifpub in(0,1) then 1 else null end) as "nhwb"
+	  from NB_ZT_JBXX t where ANCHEYEAR=to_char(ADD_MONTHS(sysdate,-12),'yyyy') AND ENTSTATUS = 1
+  </select>
+  <select id="selectNdnseData" resultType="java.util.Map" >
+	 SELECT 
+		(select item_name from pub_dict_item where dic_type ='INDUSTRYPHY' and item_value=INDUSTRYPHY ) as name,
+		SUM(RATGRO/10000) AS value 
+		FROM 
+			NB_ZT_JBXX ZT,
+			NB_QY_ZCZK_MAIN ZC
+		WHERE ZT.ANCHEID=ZC.ANCHEID
+		 	AND ZT.IFPUB IN ('2', '3', '5')
+		 	AND ZT.ENTSTATUS = 1
+			AND ZT.ANCHEYEAR = '2017'
+			AND ZT.ENTCAT in (1,2,8)
+			GROUP BY ZT.INDUSTRYPHY 
+			ORDER BY SUM(RATGRO) desc
+  </select>
+  <select id="selectNdlreData" resultType="java.util.Map" >
+	 SELECT 
+		(select item_name from pub_dict_item where dic_type ='INDUSTRYPHY' and item_value=INDUSTRYPHY ) as name,
+		SUM(PROGRO/10000) AS value 
+		FROM 
+			NB_ZT_JBXX ZT,
+			NB_QY_ZCZK_MAIN ZC
+		WHERE ZT.ANCHEID=ZC.ANCHEID
+		 	AND ZT.IFPUB IN ('2', '3', '5')
+		 	AND ZT.ENTSTATUS = 1
+			AND ZT.ANCHEYEAR = '2017'
+			AND ZT.ENTCAT in (1,2,8)
+			GROUP BY ZT.INDUSTRYPHY 
+			ORDER BY SUM(PROGRO) desc
+  </select>
+  <select id="selectDzzjsqkQyData" resultType="java.util.Map" >
+	   select 
+          '私营' as entcat,
+       sum(b.numparm) as dyrs,
+       count(case when b.parins='1' then 1 else null end) as dw,
+       count(case when b.parins='2' then 1 else null end) as dzz,
+       count(case when b.parins='3' then 1 else null end) as dzb,
+       count(case when b.parins='4' then 1 else null end) as wcl
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy')
+  </select>
+  <select id="selectDzzjsqkQyTqData" resultType="java.util.Map" >
+	   select 
+          '私营' as entcat,
+       sum(b.numparm) as dyrs,
+       count(case when b.parins='1' then 1 else null end) as dw,
+       count(case when b.parins='2' then 1 else null end) as dzz,
+       count(case when b.parins='3' then 1 else null end) as dzb,
+       count(case when b.parins='4' then 1 else null end) as wcl
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-24),'yyyy')
+  </select>
+  <select id="selectDzzjsqkGtData" resultType="java.util.Map" >
+	 select 
+          '个体' as entcat,
+       sum(b.numparm) as dyrs,
+       count(case when b.parins='1' then 1 else null end) as dw,
+       count(case when b.parins='2' then 1 else null end) as dzz,
+       count(case when b.parins='3' then 1 else null end) as dzb,
+       count(case when b.parins='4' then 1 else null end) as wcl
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat ='5' 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy')
+  </select>
+  <select id="selectDzzjsqkGtTqData" resultType="java.util.Map" >
+	 select 
+          '个体' as entcat,
+       sum(b.numparm) as dyrs,
+       count(case when b.parins='1' then 1 else null end) as dw,
+       count(case when b.parins='2' then 1 else null end) as dzz,
+       count(case when b.parins='3' then 1 else null end) as dzb,
+       count(case when b.parins='4' then 1 else null end) as wcl
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat ='5' 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-24),'yyyy')
+  </select>
+  <select id="selectGqxDjqkData" resultType="java.util.Map" >
+	select 
+	    regorg,regorg_name as name,count(case when parins='1' then 1 else null end) as dw,
+         count(case when parins='2' then 1 else null end) as dzz,
+         count(case when parins='3' then 1 else null end) as dzb
+    from(select 
+           a.regorg,a.regorg_name,b.parins
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy')
+        union all  
+        select 
+            a.regorg,a.regorg_name,b.parins
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat='5'
+              and a.ifpub in(2,3,5)
+              and b.parins in(1,2,3)
+              and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy'))
+	group by regorg,regorg_name order by regorg asc
+  </select>
+  <select id="selectQxdzzphbData" resultType="java.util.Map" >
+  	select 
+	    regorg,regorg_name as "name",count(1) as "value"
+    from(select 
+           a.regorg,a.regorg_name
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy')
+        union all  
+        select 
+            a.regorg,a.regorg_name
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat='5'
+              and a.ifpub in(2,3,5)
+              and b.parins in(1,2,3)
+              and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy'))
+	group by regorg,regorg_name order by "value" desc
+  </select>
+  <select id="selectQxdyrsphbData" resultType="java.util.Map" >
+  	select 
+    regorg,regorg_name as "name",sum(numparm) as "value"
+    from(select 
+            a.regorg,a.regorg_name,b.numparm
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+            and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy')
+        union all  
+        select 
+            a.regorg,a.regorg_name,b.numparm
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat='5'
+              and a.ifpub in(2,3,5)
+              and b.parins in(1,2,3,4)
+              and a.ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy'))
+	group by regorg,regorg_name order by "value" desc
+  </select>
+  <select id="selectDzzzzqsData" resultType="java.util.Map" >
+  	select 
+	    count(case when ancheyear = to_char(ADD_MONTHS(sysdate,-36),'yyyy') then 1 else null end) as year1,
+	    count(case when ancheyear = to_char(ADD_MONTHS(sysdate,-24),'yyyy') then 1 else null end) as year2,
+	    count(case when ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy') then 1 else null end) as year3
+    from(select 
+            a.ancheyear
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3)
+        union all  
+        select 
+            a.ancheyear
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat='5'
+              and a.ifpub in(2,3,5)
+              and b.parins in(1,2,3))
+  </select>
+  <select id="selectDyrszzqsData" resultType="java.util.Map" >
+  	select 
+    sum(case when ancheyear = to_char(ADD_MONTHS(sysdate,-36),'yyyy') then numparm else 0 end) as year1,
+    sum(case when ancheyear = to_char(ADD_MONTHS(sysdate,-24),'yyyy') then numparm else 0 end) as year2,
+    sum(case when ancheyear = to_char(ADD_MONTHS(sysdate,-12),'yyyy') then numparm else 0 end) as year3
+    from(select 
+            a.ancheyear,b.numparm
+          from nb_zt_jbxx a 
+          left join nb_qy_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat =2 
+            and a.ifpub in(2,3,5)
+            and b.parins in (1,2,3,4)
+        union all  
+        select 
+            a.ancheyear,b.numparm
+          from nb_zt_jbxx a 
+          left join nb_gt_djxx_main b on a.ancheid = b.ancheid 
+          where a.entcat='5'
+              and a.ifpub in(2,3,5)
+              and b.parins in(1,2,3,4))
+  </select>
+</mapper>

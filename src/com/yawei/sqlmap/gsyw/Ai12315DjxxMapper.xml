@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yawei.client.gsyw.Ai12315DjxxMapper" >
+  <resultMap id="BaseResultMap" type="com.yawei.model.gsyw.Ai12315Djxx" >
+    <result column="RECID" property="recid" jdbcType="VARCHAR" />
+    <result column="REGINO" property="regino" jdbcType="VARCHAR" />
+    <result column="INFOORI" property="infoori" jdbcType="CHAR" />
+    <result column="INCFORM" property="incform" jdbcType="CHAR" />
+    <result column="REGORG" property="regorg" jdbcType="VARCHAR" />
+    <result column="REGDEP" property="regdep" jdbcType="VARCHAR" />
+    <result column="ACCREGPER" property="accregper" jdbcType="VARCHAR" />
+    <result column="REGTIME" property="regtime" jdbcType="TIMESTAMP" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="ADDR" property="addr" jdbcType="VARCHAR" />
+    <result column="TEL" property="tel" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="CHAR" />
+    <result column="PERIDE" property="peride" jdbcType="CHAR" />
+    <result column="PERTYPE" property="pertype" jdbcType="CHAR" />
+    <result column="CERTYPE" property="certype" jdbcType="CHAR" />
+    <result column="CERNO" property="cerno" jdbcType="VARCHAR" />
+    <result column="HANDISIGN" property="handisign" jdbcType="CHAR" />
+    <result column="WORKUNIT" property="workunit" jdbcType="VARCHAR" />
+    <result column="POSTCODE" property="postcode" jdbcType="CHAR" />
+    <result column="MEMLEVEL" property="memlevel" jdbcType="VARCHAR" />
+    <result column="INFOTYPE" property="infotype" jdbcType="CHAR" />
+    <result column="KEYWORD" property="keyword" jdbcType="VARCHAR" />
+    <result column="IDIQUE" property="idique" jdbcType="VARCHAR" />
+    <result column="CONLRANGE" property="conlrange" jdbcType="VARCHAR" />
+    <result column="BRIST" property="brist" jdbcType="VARCHAR" />
+    <result column="APPLBASQUE" property="applbasque" jdbcType="VARCHAR" />
+    <result column="ACCTIME" property="acctime" jdbcType="TIMESTAMP" />
+    <result column="ACCSCE" property="accsce" jdbcType="VARCHAR" />
+    <result column="CONTROVERSYTIME" property="controversytime" jdbcType="TIMESTAMP" />
+    <result column="CONSUMETIME" property="consumetime" jdbcType="TIMESTAMP" />
+    <result column="ISRECONCILE" property="isreconcile" jdbcType="CHAR" />
+    <result column="ISNEEDANSWER" property="isneedanswer" jdbcType="CHAR" />
+    <result column="AUDIOFILE" property="audiofile" jdbcType="VARCHAR" />
+    <result column="SFSL" property="sfsl" jdbcType="CHAR" />
+    <result column="LDTEL" property="ldtel" jdbcType="VARCHAR" />
+    <result column="ISSECRET" property="issecret" jdbcType="CHAR" />
+    <result column="ZXLX" property="zxlx" jdbcType="CHAR" />
+    <result column="ZXWTFL" property="zxwtfl" jdbcType="CHAR" />
+    <result column="JYDZ" property="jydz" jdbcType="VARCHAR" />
+    <result column="AJLY" property="ajly" jdbcType="CHAR" />
+    <result column="GRGZ" property="grgz" jdbcType="CHAR" />
+    <result column="DCJB" property="dcjb" jdbcType="CHAR" />
+    <result column="CFJB" property="cfjb" jdbcType="CHAR" />
+    <result column="ZDGZ" property="zdgz" jdbcType="CHAR" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="HJSTATUS" property="hjstatus" jdbcType="CHAR" />
+    <result column="CURREGORG" property="curregorg" jdbcType="VARCHAR" />
+    <result column="CURDEP" property="curdep" jdbcType="VARCHAR" />
+    <result column="REPORTBASQUE" property="reportbasque" jdbcType="VARCHAR" />
+    <result column="REGNO" property="regno" jdbcType="VARCHAR" />
+    <result column="UNISCID" property="uniscid" jdbcType="VARCHAR" />
+    <result column="INVOPT" property="invopt" jdbcType="VARCHAR" />
+    <result column="PTTYPE" property="pttype" jdbcType="VARCHAR" />
+    <result column="UBINDTYPE" property="ubindtype" jdbcType="VARCHAR" />
+    <result column="ENTTYPE" property="enttype" jdbcType="VARCHAR" />
+    <result column="PTADDR" property="ptaddr" jdbcType="VARCHAR" />
+    <result column="PTTEL" property="pttel" jdbcType="VARCHAR" />
+    <result column="SALEMODE" property="salemode" jdbcType="VARCHAR" />
+    <result column="MANORG" property="manorg" jdbcType="VARCHAR" />
+    <result column="ZT_REGORG" property="ztRegorg" jdbcType="VARCHAR" />
+    <result column="ZT_LOCALORG" property="ztLocalorg" jdbcType="VARCHAR" />
+    <result column="OBTYPE" property="obtype" jdbcType="VARCHAR" />
+    <result column="MDSENAME" property="mdsename" jdbcType="VARCHAR" />
+    <result column="BRANDNAME" property="brandname" jdbcType="VARCHAR" />
+    <result column="MEAUNIT" property="meaunit" jdbcType="VARCHAR" />
+    <result column="QUAN" property="quan" jdbcType="DECIMAL" />
+    <result column="MERIMPSIGN" property="merimpsign" jdbcType="CHAR" />
+    <result column="TYPESPF" property="typespf" jdbcType="VARCHAR" />
+    <result column="INVOAM" property="invoam" jdbcType="DECIMAL" />
+    <result column="ISTOCASE" property="istocase" jdbcType="CHAR" />
+    <result column="SUGGESTION" property="suggestion" jdbcType="VARCHAR" />
+    <result column="ADVISORYREPLY" property="advisoryreply" jdbcType="VARCHAR" />
+    <result column="HFZT" property="hfzt" jdbcType="CHAR" />
+    <result column="CREATER" property="creater" jdbcType="VARCHAR" />
+    <result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="UPDATER" property="updater" jdbcType="VARCHAR" />
+    <result column="UPDATETIME" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="VER" property="ver" jdbcType="DECIMAL" />
+    <result column="NOTE" property="note" jdbcType="VARCHAR" />
+    <result column="BLQX" property="blqx" jdbcType="TIMESTAMP" />
+    <result column="TRANSSTATUS" property="transstatus" jdbcType="CHAR" />
+    <result column="CCFKRQ" property="ccfkrq" jdbcType="TIMESTAMP" />
+    <result column="AJSTATUS" property="ajstatus" jdbcType="CHAR" />
+    <result column="INVALID_CALL" property="invalidCall" jdbcType="CHAR" />
+    <result column="ENTCAT" property="entcat" jdbcType="CHAR" />
+    <result column="OPEORG" property="opeorg" jdbcType="VARCHAR" />
+    <result column="OPEDEP" property="opedep" jdbcType="VARCHAR" />
+    <result column="BJSJ" property="bjsj" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    RECID, REGINO, INFOORI, INCFORM, REGORG, REGDEP, ACCREGPER, REGTIME, NAME, ADDR, 
+    TEL, SEX, PERIDE, PERTYPE, CERTYPE, CERNO, HANDISIGN, WORKUNIT, POSTCODE, MEMLEVEL, 
+    INFOTYPE, KEYWORD, IDIQUE, CONLRANGE, BRIST, APPLBASQUE, ACCTIME, ACCSCE, CONTROVERSYTIME, 
+    CONSUMETIME, ISRECONCILE, ISNEEDANSWER, AUDIOFILE, SFSL, LDTEL, ISSECRET, ZXLX, ZXWTFL, 
+    JYDZ, AJLY, GRGZ, DCJB, CFJB, ZDGZ, STATUS, HJSTATUS, CURREGORG, CURDEP, REPORTBASQUE, 
+    REGNO, UNISCID, INVOPT, PTTYPE, UBINDTYPE, ENTTYPE, PTADDR, PTTEL, SALEMODE, MANORG, 
+    ZT_REGORG, ZT_LOCALORG, OBTYPE, MDSENAME, BRANDNAME, MEAUNIT, QUAN, MERIMPSIGN, TYPESPF, 
+    INVOAM, ISTOCASE, SUGGESTION, ADVISORYREPLY, HFZT, CREATER, CREATETIME, UPDATER, 
+    UPDATETIME, VER, NOTE, BLQX, TRANSSTATUS, CCFKRQ, AJSTATUS, INVALID_CALL, ENTCAT, 
+    OPEORG, OPEDEP, BJSJ
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yawei.model.gsyw.Ai12315DjxxExample" >
+    <include refid="OracleDialectPrefix" />
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from TAGSYW.AI_12315_DJXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <include refid="OracleDialectSuffix" />
+  </select>
+  <delete id="deleteByExample" parameterType="com.yawei.model.gsyw.Ai12315DjxxExample" >
+    delete from TAGSYW.AI_12315_DJXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.yawei.model.gsyw.Ai12315Djxx" >
+    insert into TAGSYW.AI_12315_DJXX (RECID, REGINO, INFOORI, 
+      INCFORM, REGORG, REGDEP, 
+      ACCREGPER, REGTIME, NAME, 
+      ADDR, TEL, SEX, PERIDE, 
+      PERTYPE, CERTYPE, CERNO, 
+      HANDISIGN, WORKUNIT, POSTCODE, 
+      MEMLEVEL, INFOTYPE, KEYWORD, 
+      IDIQUE, CONLRANGE, BRIST, 
+      APPLBASQUE, ACCTIME, ACCSCE, 
+      CONTROVERSYTIME, CONSUMETIME, ISRECONCILE, 
+      ISNEEDANSWER, AUDIOFILE, SFSL, 
+      LDTEL, ISSECRET, ZXLX, ZXWTFL, 
+      JYDZ, AJLY, GRGZ, DCJB, 
+      CFJB, ZDGZ, STATUS, HJSTATUS, 
+      CURREGORG, CURDEP, REPORTBASQUE, 
+      REGNO, UNISCID, INVOPT, 
+      PTTYPE, UBINDTYPE, ENTTYPE, 
+      PTADDR, PTTEL, SALEMODE, 
+      MANORG, ZT_REGORG, ZT_LOCALORG, 
+      OBTYPE, MDSENAME, BRANDNAME, 
+      MEAUNIT, QUAN, MERIMPSIGN, 
+      TYPESPF, INVOAM, ISTOCASE, 
+      SUGGESTION, ADVISORYREPLY, HFZT, 
+      CREATER, CREATETIME, UPDATER, 
+      UPDATETIME, VER, NOTE, 
+      BLQX, TRANSSTATUS, CCFKRQ, 
+      AJSTATUS, INVALID_CALL, ENTCAT, 
+      OPEORG, OPEDEP, BJSJ
+      )
+    values (#{recid,jdbcType=VARCHAR}, #{regino,jdbcType=VARCHAR}, #{infoori,jdbcType=CHAR}, 
+      #{incform,jdbcType=CHAR}, #{regorg,jdbcType=VARCHAR}, #{regdep,jdbcType=VARCHAR}, 
+      #{accregper,jdbcType=VARCHAR}, #{regtime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR}, 
+      #{addr,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{peride,jdbcType=CHAR}, 
+      #{pertype,jdbcType=CHAR}, #{certype,jdbcType=CHAR}, #{cerno,jdbcType=VARCHAR}, 
+      #{handisign,jdbcType=CHAR}, #{workunit,jdbcType=VARCHAR}, #{postcode,jdbcType=CHAR}, 
+      #{memlevel,jdbcType=VARCHAR}, #{infotype,jdbcType=CHAR}, #{keyword,jdbcType=VARCHAR}, 
+      #{idique,jdbcType=VARCHAR}, #{conlrange,jdbcType=VARCHAR}, #{brist,jdbcType=VARCHAR}, 
+      #{applbasque,jdbcType=VARCHAR}, #{acctime,jdbcType=TIMESTAMP}, #{accsce,jdbcType=VARCHAR}, 
+      #{controversytime,jdbcType=TIMESTAMP}, #{consumetime,jdbcType=TIMESTAMP}, #{isreconcile,jdbcType=CHAR}, 
+      #{isneedanswer,jdbcType=CHAR}, #{audiofile,jdbcType=VARCHAR}, #{sfsl,jdbcType=CHAR}, 
+      #{ldtel,jdbcType=VARCHAR}, #{issecret,jdbcType=CHAR}, #{zxlx,jdbcType=CHAR}, #{zxwtfl,jdbcType=CHAR}, 
+      #{jydz,jdbcType=VARCHAR}, #{ajly,jdbcType=CHAR}, #{grgz,jdbcType=CHAR}, #{dcjb,jdbcType=CHAR}, 
+      #{cfjb,jdbcType=CHAR}, #{zdgz,jdbcType=CHAR}, #{status,jdbcType=CHAR}, #{hjstatus,jdbcType=CHAR}, 
+      #{curregorg,jdbcType=VARCHAR}, #{curdep,jdbcType=VARCHAR}, #{reportbasque,jdbcType=VARCHAR}, 
+      #{regno,jdbcType=VARCHAR}, #{uniscid,jdbcType=VARCHAR}, #{invopt,jdbcType=VARCHAR}, 
+      #{pttype,jdbcType=VARCHAR}, #{ubindtype,jdbcType=VARCHAR}, #{enttype,jdbcType=VARCHAR}, 
+      #{ptaddr,jdbcType=VARCHAR}, #{pttel,jdbcType=VARCHAR}, #{salemode,jdbcType=VARCHAR}, 
+      #{manorg,jdbcType=VARCHAR}, #{ztRegorg,jdbcType=VARCHAR}, #{ztLocalorg,jdbcType=VARCHAR}, 
+      #{obtype,jdbcType=VARCHAR}, #{mdsename,jdbcType=VARCHAR}, #{brandname,jdbcType=VARCHAR}, 
+      #{meaunit,jdbcType=VARCHAR}, #{quan,jdbcType=DECIMAL}, #{merimpsign,jdbcType=CHAR}, 
+      #{typespf,jdbcType=VARCHAR}, #{invoam,jdbcType=DECIMAL}, #{istocase,jdbcType=CHAR}, 
+      #{suggestion,jdbcType=VARCHAR}, #{advisoryreply,jdbcType=VARCHAR}, #{hfzt,jdbcType=CHAR}, 
+      #{creater,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updater,jdbcType=VARCHAR}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{ver,jdbcType=DECIMAL}, #{note,jdbcType=VARCHAR}, 
+      #{blqx,jdbcType=TIMESTAMP}, #{transstatus,jdbcType=CHAR}, #{ccfkrq,jdbcType=TIMESTAMP}, 
+      #{ajstatus,jdbcType=CHAR}, #{invalidCall,jdbcType=CHAR}, #{entcat,jdbcType=CHAR}, 
+      #{opeorg,jdbcType=VARCHAR}, #{opedep,jdbcType=VARCHAR}, #{bjsj,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.yawei.model.gsyw.Ai12315Djxx" >
+    insert into TAGSYW.AI_12315_DJXX
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="recid != null" >
+        RECID,
+      </if>
+      <if test="regino != null" >
+        REGINO,
+      </if>
+      <if test="infoori != null" >
+        INFOORI,
+      </if>
+      <if test="incform != null" >
+        INCFORM,
+      </if>
+      <if test="regorg != null" >
+        REGORG,
+      </if>
+      <if test="regdep != null" >
+        REGDEP,
+      </if>
+      <if test="accregper != null" >
+        ACCREGPER,
+      </if>
+      <if test="regtime != null" >
+        REGTIME,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="addr != null" >
+        ADDR,
+      </if>
+      <if test="tel != null" >
+        TEL,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="peride != null" >
+        PERIDE,
+      </if>
+      <if test="pertype != null" >
+        PERTYPE,
+      </if>
+      <if test="certype != null" >
+        CERTYPE,
+      </if>
+      <if test="cerno != null" >
+        CERNO,
+      </if>
+      <if test="handisign != null" >
+        HANDISIGN,
+      </if>
+      <if test="workunit != null" >
+        WORKUNIT,
+      </if>
+      <if test="postcode != null" >
+        POSTCODE,
+      </if>
+      <if test="memlevel != null" >
+        MEMLEVEL,
+      </if>
+      <if test="infotype != null" >
+        INFOTYPE,
+      </if>
+      <if test="keyword != null" >
+        KEYWORD,
+      </if>
+      <if test="idique != null" >
+        IDIQUE,
+      </if>
+      <if test="conlrange != null" >
+        CONLRANGE,
+      </if>
+      <if test="brist != null" >
+        BRIST,
+      </if>
+      <if test="applbasque != null" >
+        APPLBASQUE,
+      </if>
+      <if test="acctime != null" >
+        ACCTIME,
+      </if>
+      <if test="accsce != null" >
+        ACCSCE,
+      </if>
+      <if test="controversytime != null" >
+        CONTROVERSYTIME,
+      </if>
+      <if test="consumetime != null" >
+        CONSUMETIME,
+      </if>
+      <if test="isreconcile != null" >
+        ISRECONCILE,
+      </if>
+      <if test="isneedanswer != null" >
+        ISNEEDANSWER,
+      </if>
+      <if test="audiofile != null" >
+        AUDIOFILE,
+      </if>
+      <if test="sfsl != null" >
+        SFSL,
+      </if>
+      <if test="ldtel != null" >
+        LDTEL,
+      </if>
+      <if test="issecret != null" >
+        ISSECRET,
+      </if>
+      <if test="zxlx != null" >
+        ZXLX,
+      </if>
+      <if test="zxwtfl != null" >
+        ZXWTFL,
+      </if>
+      <if test="jydz != null" >
+        JYDZ,
+      </if>
+      <if test="ajly != null" >
+        AJLY,
+      </if>
+      <if test="grgz != null" >
+        GRGZ,
+      </if>
+      <if test="dcjb != null" >
+        DCJB,
+      </if>
+      <if test="cfjb != null" >
+        CFJB,
+      </if>
+      <if test="zdgz != null" >
+        ZDGZ,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="hjstatus != null" >
+        HJSTATUS,
+      </if>
+      <if test="curregorg != null" >
+        CURREGORG,
+      </if>
+      <if test="curdep != null" >
+        CURDEP,
+      </if>
+      <if test="reportbasque != null" >
+        REPORTBASQUE,
+      </if>
+      <if test="regno != null" >
+        REGNO,
+      </if>
+      <if test="uniscid != null" >
+        UNISCID,
+      </if>
+      <if test="invopt != null" >
+        INVOPT,
+      </if>
+      <if test="pttype != null" >
+        PTTYPE,
+      </if>
+      <if test="ubindtype != null" >
+        UBINDTYPE,
+      </if>
+      <if test="enttype != null" >
+        ENTTYPE,
+      </if>
+      <if test="ptaddr != null" >
+        PTADDR,
+      </if>
+      <if test="pttel != null" >
+        PTTEL,
+      </if>
+      <if test="salemode != null" >
+        SALEMODE,
+      </if>
+      <if test="manorg != null" >
+        MANORG,
+      </if>
+      <if test="ztRegorg != null" >
+        ZT_REGORG,
+      </if>
+      <if test="ztLocalorg != null" >
+        ZT_LOCALORG,
+      </if>
+      <if test="obtype != null" >
+        OBTYPE,
+      </if>
+      <if test="mdsename != null" >
+        MDSENAME,
+      </if>
+      <if test="brandname != null" >
+        BRANDNAME,
+      </if>
+      <if test="meaunit != null" >
+        MEAUNIT,
+      </if>
+      <if test="quan != null" >
+        QUAN,
+      </if>
+      <if test="merimpsign != null" >
+        MERIMPSIGN,
+      </if>
+      <if test="typespf != null" >
+        TYPESPF,
+      </if>
+      <if test="invoam != null" >
+        INVOAM,
+      </if>
+      <if test="istocase != null" >
+        ISTOCASE,
+      </if>
+      <if test="suggestion != null" >
+        SUGGESTION,
+      </if>
+      <if test="advisoryreply != null" >
+        ADVISORYREPLY,
+      </if>
+      <if test="hfzt != null" >
+        HFZT,
+      </if>
+      <if test="creater != null" >
+        CREATER,
+      </if>
+      <if test="createtime != null" >
+        CREATETIME,
+      </if>
+      <if test="updater != null" >
+        UPDATER,
+      </if>
+      <if test="updatetime != null" >
+        UPDATETIME,
+      </if>
+      <if test="ver != null" >
+        VER,
+      </if>
+      <if test="note != null" >
+        NOTE,
+      </if>
+      <if test="blqx != null" >
+        BLQX,
+      </if>
+      <if test="transstatus != null" >
+        TRANSSTATUS,
+      </if>
+      <if test="ccfkrq != null" >
+        CCFKRQ,
+      </if>
+      <if test="ajstatus != null" >
+        AJSTATUS,
+      </if>
+      <if test="invalidCall != null" >
+        INVALID_CALL,
+      </if>
+      <if test="entcat != null" >
+        ENTCAT,
+      </if>
+      <if test="opeorg != null" >
+        OPEORG,
+      </if>
+      <if test="opedep != null" >
+        OPEDEP,
+      </if>
+      <if test="bjsj != null" >
+        BJSJ,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="recid != null" >
+        #{recid,jdbcType=VARCHAR},
+      </if>
+      <if test="regino != null" >
+        #{regino,jdbcType=VARCHAR},
+      </if>
+      <if test="infoori != null" >
+        #{infoori,jdbcType=CHAR},
+      </if>
+      <if test="incform != null" >
+        #{incform,jdbcType=CHAR},
+      </if>
+      <if test="regorg != null" >
+        #{regorg,jdbcType=VARCHAR},
+      </if>
+      <if test="regdep != null" >
+        #{regdep,jdbcType=VARCHAR},
+      </if>
+      <if test="accregper != null" >
+        #{accregper,jdbcType=VARCHAR},
+      </if>
+      <if test="regtime != null" >
+        #{regtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="peride != null" >
+        #{peride,jdbcType=CHAR},
+      </if>
+      <if test="pertype != null" >
+        #{pertype,jdbcType=CHAR},
+      </if>
+      <if test="certype != null" >
+        #{certype,jdbcType=CHAR},
+      </if>
+      <if test="cerno != null" >
+        #{cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="handisign != null" >
+        #{handisign,jdbcType=CHAR},
+      </if>
+      <if test="workunit != null" >
+        #{workunit,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=CHAR},
+      </if>
+      <if test="memlevel != null" >
+        #{memlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="infotype != null" >
+        #{infotype,jdbcType=CHAR},
+      </if>
+      <if test="keyword != null" >
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="idique != null" >
+        #{idique,jdbcType=VARCHAR},
+      </if>
+      <if test="conlrange != null" >
+        #{conlrange,jdbcType=VARCHAR},
+      </if>
+      <if test="brist != null" >
+        #{brist,jdbcType=VARCHAR},
+      </if>
+      <if test="applbasque != null" >
+        #{applbasque,jdbcType=VARCHAR},
+      </if>
+      <if test="acctime != null" >
+        #{acctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accsce != null" >
+        #{accsce,jdbcType=VARCHAR},
+      </if>
+      <if test="controversytime != null" >
+        #{controversytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="consumetime != null" >
+        #{consumetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isreconcile != null" >
+        #{isreconcile,jdbcType=CHAR},
+      </if>
+      <if test="isneedanswer != null" >
+        #{isneedanswer,jdbcType=CHAR},
+      </if>
+      <if test="audiofile != null" >
+        #{audiofile,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsl != null" >
+        #{sfsl,jdbcType=CHAR},
+      </if>
+      <if test="ldtel != null" >
+        #{ldtel,jdbcType=VARCHAR},
+      </if>
+      <if test="issecret != null" >
+        #{issecret,jdbcType=CHAR},
+      </if>
+      <if test="zxlx != null" >
+        #{zxlx,jdbcType=CHAR},
+      </if>
+      <if test="zxwtfl != null" >
+        #{zxwtfl,jdbcType=CHAR},
+      </if>
+      <if test="jydz != null" >
+        #{jydz,jdbcType=VARCHAR},
+      </if>
+      <if test="ajly != null" >
+        #{ajly,jdbcType=CHAR},
+      </if>
+      <if test="grgz != null" >
+        #{grgz,jdbcType=CHAR},
+      </if>
+      <if test="dcjb != null" >
+        #{dcjb,jdbcType=CHAR},
+      </if>
+      <if test="cfjb != null" >
+        #{cfjb,jdbcType=CHAR},
+      </if>
+      <if test="zdgz != null" >
+        #{zdgz,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="hjstatus != null" >
+        #{hjstatus,jdbcType=CHAR},
+      </if>
+      <if test="curregorg != null" >
+        #{curregorg,jdbcType=VARCHAR},
+      </if>
+      <if test="curdep != null" >
+        #{curdep,jdbcType=VARCHAR},
+      </if>
+      <if test="reportbasque != null" >
+        #{reportbasque,jdbcType=VARCHAR},
+      </if>
+      <if test="regno != null" >
+        #{regno,jdbcType=VARCHAR},
+      </if>
+      <if test="uniscid != null" >
+        #{uniscid,jdbcType=VARCHAR},
+      </if>
+      <if test="invopt != null" >
+        #{invopt,jdbcType=VARCHAR},
+      </if>
+      <if test="pttype != null" >
+        #{pttype,jdbcType=VARCHAR},
+      </if>
+      <if test="ubindtype != null" >
+        #{ubindtype,jdbcType=VARCHAR},
+      </if>
+      <if test="enttype != null" >
+        #{enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="ptaddr != null" >
+        #{ptaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="pttel != null" >
+        #{pttel,jdbcType=VARCHAR},
+      </if>
+      <if test="salemode != null" >
+        #{salemode,jdbcType=VARCHAR},
+      </if>
+      <if test="manorg != null" >
+        #{manorg,jdbcType=VARCHAR},
+      </if>
+      <if test="ztRegorg != null" >
+        #{ztRegorg,jdbcType=VARCHAR},
+      </if>
+      <if test="ztLocalorg != null" >
+        #{ztLocalorg,jdbcType=VARCHAR},
+      </if>
+      <if test="obtype != null" >
+        #{obtype,jdbcType=VARCHAR},
+      </if>
+      <if test="mdsename != null" >
+        #{mdsename,jdbcType=VARCHAR},
+      </if>
+      <if test="brandname != null" >
+        #{brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="meaunit != null" >
+        #{meaunit,jdbcType=VARCHAR},
+      </if>
+      <if test="quan != null" >
+        #{quan,jdbcType=DECIMAL},
+      </if>
+      <if test="merimpsign != null" >
+        #{merimpsign,jdbcType=CHAR},
+      </if>
+      <if test="typespf != null" >
+        #{typespf,jdbcType=VARCHAR},
+      </if>
+      <if test="invoam != null" >
+        #{invoam,jdbcType=DECIMAL},
+      </if>
+      <if test="istocase != null" >
+        #{istocase,jdbcType=CHAR},
+      </if>
+      <if test="suggestion != null" >
+        #{suggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="advisoryreply != null" >
+        #{advisoryreply,jdbcType=VARCHAR},
+      </if>
+      <if test="hfzt != null" >
+        #{hfzt,jdbcType=CHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updater != null" >
+        #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ver != null" >
+        #{ver,jdbcType=DECIMAL},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="blqx != null" >
+        #{blqx,jdbcType=TIMESTAMP},
+      </if>
+      <if test="transstatus != null" >
+        #{transstatus,jdbcType=CHAR},
+      </if>
+      <if test="ccfkrq != null" >
+        #{ccfkrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ajstatus != null" >
+        #{ajstatus,jdbcType=CHAR},
+      </if>
+      <if test="invalidCall != null" >
+        #{invalidCall,jdbcType=CHAR},
+      </if>
+      <if test="entcat != null" >
+        #{entcat,jdbcType=CHAR},
+      </if>
+      <if test="opeorg != null" >
+        #{opeorg,jdbcType=VARCHAR},
+      </if>
+      <if test="opedep != null" >
+        #{opedep,jdbcType=VARCHAR},
+      </if>
+      <if test="bjsj != null" >
+        #{bjsj,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.yawei.model.gsyw.Ai12315DjxxExample" resultType="java.lang.Integer" >
+    select count(*) from TAGSYW.AI_12315_DJXX
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TAGSYW.AI_12315_DJXX
+    <set >
+      <if test="record.recid != null" >
+        RECID = #{record.recid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regino != null" >
+        REGINO = #{record.regino,jdbcType=VARCHAR},
+      </if>
+      <if test="record.infoori != null" >
+        INFOORI = #{record.infoori,jdbcType=CHAR},
+      </if>
+      <if test="record.incform != null" >
+        INCFORM = #{record.incform,jdbcType=CHAR},
+      </if>
+      <if test="record.regorg != null" >
+        REGORG = #{record.regorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regdep != null" >
+        REGDEP = #{record.regdep,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accregper != null" >
+        ACCREGPER = #{record.accregper,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regtime != null" >
+        REGTIME = #{record.regtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addr != null" >
+        ADDR = #{record.addr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tel != null" >
+        TEL = #{record.tel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        SEX = #{record.sex,jdbcType=CHAR},
+      </if>
+      <if test="record.peride != null" >
+        PERIDE = #{record.peride,jdbcType=CHAR},
+      </if>
+      <if test="record.pertype != null" >
+        PERTYPE = #{record.pertype,jdbcType=CHAR},
+      </if>
+      <if test="record.certype != null" >
+        CERTYPE = #{record.certype,jdbcType=CHAR},
+      </if>
+      <if test="record.cerno != null" >
+        CERNO = #{record.cerno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handisign != null" >
+        HANDISIGN = #{record.handisign,jdbcType=CHAR},
+      </if>
+      <if test="record.workunit != null" >
+        WORKUNIT = #{record.workunit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.postcode != null" >
+        POSTCODE = #{record.postcode,jdbcType=CHAR},
+      </if>
+      <if test="record.memlevel != null" >
+        MEMLEVEL = #{record.memlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.infotype != null" >
+        INFOTYPE = #{record.infotype,jdbcType=CHAR},
+      </if>
+      <if test="record.keyword != null" >
+        KEYWORD = #{record.keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idique != null" >
+        IDIQUE = #{record.idique,jdbcType=VARCHAR},
+      </if>
+      <if test="record.conlrange != null" >
+        CONLRANGE = #{record.conlrange,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brist != null" >
+        BRIST = #{record.brist,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applbasque != null" >
+        APPLBASQUE = #{record.applbasque,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acctime != null" >
+        ACCTIME = #{record.acctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.accsce != null" >
+        ACCSCE = #{record.accsce,jdbcType=VARCHAR},
+      </if>
+      <if test="record.controversytime != null" >
+        CONTROVERSYTIME = #{record.controversytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.consumetime != null" >
+        CONSUMETIME = #{record.consumetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isreconcile != null" >
+        ISRECONCILE = #{record.isreconcile,jdbcType=CHAR},
+      </if>
+      <if test="record.isneedanswer != null" >
+        ISNEEDANSWER = #{record.isneedanswer,jdbcType=CHAR},
+      </if>
+      <if test="record.audiofile != null" >
+        AUDIOFILE = #{record.audiofile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sfsl != null" >
+        SFSL = #{record.sfsl,jdbcType=CHAR},
+      </if>
+      <if test="record.ldtel != null" >
+        LDTEL = #{record.ldtel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.issecret != null" >
+        ISSECRET = #{record.issecret,jdbcType=CHAR},
+      </if>
+      <if test="record.zxlx != null" >
+        ZXLX = #{record.zxlx,jdbcType=CHAR},
+      </if>
+      <if test="record.zxwtfl != null" >
+        ZXWTFL = #{record.zxwtfl,jdbcType=CHAR},
+      </if>
+      <if test="record.jydz != null" >
+        JYDZ = #{record.jydz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ajly != null" >
+        AJLY = #{record.ajly,jdbcType=CHAR},
+      </if>
+      <if test="record.grgz != null" >
+        GRGZ = #{record.grgz,jdbcType=CHAR},
+      </if>
+      <if test="record.dcjb != null" >
+        DCJB = #{record.dcjb,jdbcType=CHAR},
+      </if>
+      <if test="record.cfjb != null" >
+        CFJB = #{record.cfjb,jdbcType=CHAR},
+      </if>
+      <if test="record.zdgz != null" >
+        ZDGZ = #{record.zdgz,jdbcType=CHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=CHAR},
+      </if>
+      <if test="record.hjstatus != null" >
+        HJSTATUS = #{record.hjstatus,jdbcType=CHAR},
+      </if>
+      <if test="record.curregorg != null" >
+        CURREGORG = #{record.curregorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.curdep != null" >
+        CURDEP = #{record.curdep,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reportbasque != null" >
+        REPORTBASQUE = #{record.reportbasque,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regno != null" >
+        REGNO = #{record.regno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uniscid != null" >
+        UNISCID = #{record.uniscid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invopt != null" >
+        INVOPT = #{record.invopt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pttype != null" >
+        PTTYPE = #{record.pttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubindtype != null" >
+        UBINDTYPE = #{record.ubindtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enttype != null" >
+        ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ptaddr != null" >
+        PTADDR = #{record.ptaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pttel != null" >
+        PTTEL = #{record.pttel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salemode != null" >
+        SALEMODE = #{record.salemode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.manorg != null" >
+        MANORG = #{record.manorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ztRegorg != null" >
+        ZT_REGORG = #{record.ztRegorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ztLocalorg != null" >
+        ZT_LOCALORG = #{record.ztLocalorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.obtype != null" >
+        OBTYPE = #{record.obtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mdsename != null" >
+        MDSENAME = #{record.mdsename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brandname != null" >
+        BRANDNAME = #{record.brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.meaunit != null" >
+        MEAUNIT = #{record.meaunit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.quan != null" >
+        QUAN = #{record.quan,jdbcType=DECIMAL},
+      </if>
+      <if test="record.merimpsign != null" >
+        MERIMPSIGN = #{record.merimpsign,jdbcType=CHAR},
+      </if>
+      <if test="record.typespf != null" >
+        TYPESPF = #{record.typespf,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoam != null" >
+        INVOAM = #{record.invoam,jdbcType=DECIMAL},
+      </if>
+      <if test="record.istocase != null" >
+        ISTOCASE = #{record.istocase,jdbcType=CHAR},
+      </if>
+      <if test="record.suggestion != null" >
+        SUGGESTION = #{record.suggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.advisoryreply != null" >
+        ADVISORYREPLY = #{record.advisoryreply,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hfzt != null" >
+        HFZT = #{record.hfzt,jdbcType=CHAR},
+      </if>
+      <if test="record.creater != null" >
+        CREATER = #{record.creater,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updater != null" >
+        UPDATER = #{record.updater,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatetime != null" >
+        UPDATETIME = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ver != null" >
+        VER = #{record.ver,jdbcType=DECIMAL},
+      </if>
+      <if test="record.note != null" >
+        NOTE = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blqx != null" >
+        BLQX = #{record.blqx,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.transstatus != null" >
+        TRANSSTATUS = #{record.transstatus,jdbcType=CHAR},
+      </if>
+      <if test="record.ccfkrq != null" >
+        CCFKRQ = #{record.ccfkrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ajstatus != null" >
+        AJSTATUS = #{record.ajstatus,jdbcType=CHAR},
+      </if>
+      <if test="record.invalidCall != null" >
+        INVALID_CALL = #{record.invalidCall,jdbcType=CHAR},
+      </if>
+      <if test="record.entcat != null" >
+        ENTCAT = #{record.entcat,jdbcType=CHAR},
+      </if>
+      <if test="record.opeorg != null" >
+        OPEORG = #{record.opeorg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.opedep != null" >
+        OPEDEP = #{record.opedep,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bjsj != null" >
+        BJSJ = #{record.bjsj,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TAGSYW.AI_12315_DJXX
+    set RECID = #{record.recid,jdbcType=VARCHAR},
+      REGINO = #{record.regino,jdbcType=VARCHAR},
+      INFOORI = #{record.infoori,jdbcType=CHAR},
+      INCFORM = #{record.incform,jdbcType=CHAR},
+      REGORG = #{record.regorg,jdbcType=VARCHAR},
+      REGDEP = #{record.regdep,jdbcType=VARCHAR},
+      ACCREGPER = #{record.accregper,jdbcType=VARCHAR},
+      REGTIME = #{record.regtime,jdbcType=TIMESTAMP},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      ADDR = #{record.addr,jdbcType=VARCHAR},
+      TEL = #{record.tel,jdbcType=VARCHAR},
+      SEX = #{record.sex,jdbcType=CHAR},
+      PERIDE = #{record.peride,jdbcType=CHAR},
+      PERTYPE = #{record.pertype,jdbcType=CHAR},
+      CERTYPE = #{record.certype,jdbcType=CHAR},
+      CERNO = #{record.cerno,jdbcType=VARCHAR},
+      HANDISIGN = #{record.handisign,jdbcType=CHAR},
+      WORKUNIT = #{record.workunit,jdbcType=VARCHAR},
+      POSTCODE = #{record.postcode,jdbcType=CHAR},
+      MEMLEVEL = #{record.memlevel,jdbcType=VARCHAR},
+      INFOTYPE = #{record.infotype,jdbcType=CHAR},
+      KEYWORD = #{record.keyword,jdbcType=VARCHAR},
+      IDIQUE = #{record.idique,jdbcType=VARCHAR},
+      CONLRANGE = #{record.conlrange,jdbcType=VARCHAR},
+      BRIST = #{record.brist,jdbcType=VARCHAR},
+      APPLBASQUE = #{record.applbasque,jdbcType=VARCHAR},
+      ACCTIME = #{record.acctime,jdbcType=TIMESTAMP},
+      ACCSCE = #{record.accsce,jdbcType=VARCHAR},
+      CONTROVERSYTIME = #{record.controversytime,jdbcType=TIMESTAMP},
+      CONSUMETIME = #{record.consumetime,jdbcType=TIMESTAMP},
+      ISRECONCILE = #{record.isreconcile,jdbcType=CHAR},
+      ISNEEDANSWER = #{record.isneedanswer,jdbcType=CHAR},
+      AUDIOFILE = #{record.audiofile,jdbcType=VARCHAR},
+      SFSL = #{record.sfsl,jdbcType=CHAR},
+      LDTEL = #{record.ldtel,jdbcType=VARCHAR},
+      ISSECRET = #{record.issecret,jdbcType=CHAR},
+      ZXLX = #{record.zxlx,jdbcType=CHAR},
+      ZXWTFL = #{record.zxwtfl,jdbcType=CHAR},
+      JYDZ = #{record.jydz,jdbcType=VARCHAR},
+      AJLY = #{record.ajly,jdbcType=CHAR},
+      GRGZ = #{record.grgz,jdbcType=CHAR},
+      DCJB = #{record.dcjb,jdbcType=CHAR},
+      CFJB = #{record.cfjb,jdbcType=CHAR},
+      ZDGZ = #{record.zdgz,jdbcType=CHAR},
+      STATUS = #{record.status,jdbcType=CHAR},
+      HJSTATUS = #{record.hjstatus,jdbcType=CHAR},
+      CURREGORG = #{record.curregorg,jdbcType=VARCHAR},
+      CURDEP = #{record.curdep,jdbcType=VARCHAR},
+      REPORTBASQUE = #{record.reportbasque,jdbcType=VARCHAR},
+      REGNO = #{record.regno,jdbcType=VARCHAR},
+      UNISCID = #{record.uniscid,jdbcType=VARCHAR},
+      INVOPT = #{record.invopt,jdbcType=VARCHAR},
+      PTTYPE = #{record.pttype,jdbcType=VARCHAR},
+      UBINDTYPE = #{record.ubindtype,jdbcType=VARCHAR},
+      ENTTYPE = #{record.enttype,jdbcType=VARCHAR},
+      PTADDR = #{record.ptaddr,jdbcType=VARCHAR},
+      PTTEL = #{record.pttel,jdbcType=VARCHAR},
+      SALEMODE = #{record.salemode,jdbcType=VARCHAR},
+      MANORG = #{record.manorg,jdbcType=VARCHAR},
+      ZT_REGORG = #{record.ztRegorg,jdbcType=VARCHAR},
+      ZT_LOCALORG = #{record.ztLocalorg,jdbcType=VARCHAR},
+      OBTYPE = #{record.obtype,jdbcType=VARCHAR},
+      MDSENAME = #{record.mdsename,jdbcType=VARCHAR},
+      BRANDNAME = #{record.brandname,jdbcType=VARCHAR},
+      MEAUNIT = #{record.meaunit,jdbcType=VARCHAR},
+      QUAN = #{record.quan,jdbcType=DECIMAL},
+      MERIMPSIGN = #{record.merimpsign,jdbcType=CHAR},
+      TYPESPF = #{record.typespf,jdbcType=VARCHAR},
+      INVOAM = #{record.invoam,jdbcType=DECIMAL},
+      ISTOCASE = #{record.istocase,jdbcType=CHAR},
+      SUGGESTION = #{record.suggestion,jdbcType=VARCHAR},
+      ADVISORYREPLY = #{record.advisoryreply,jdbcType=VARCHAR},
+      HFZT = #{record.hfzt,jdbcType=CHAR},
+      CREATER = #{record.creater,jdbcType=VARCHAR},
+      CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      UPDATER = #{record.updater,jdbcType=VARCHAR},
+      UPDATETIME = #{record.updatetime,jdbcType=TIMESTAMP},
+      VER = #{record.ver,jdbcType=DECIMAL},
+      NOTE = #{record.note,jdbcType=VARCHAR},
+      BLQX = #{record.blqx,jdbcType=TIMESTAMP},
+      TRANSSTATUS = #{record.transstatus,jdbcType=CHAR},
+      CCFKRQ = #{record.ccfkrq,jdbcType=TIMESTAMP},
+      AJSTATUS = #{record.ajstatus,jdbcType=CHAR},
+      INVALID_CALL = #{record.invalidCall,jdbcType=CHAR},
+      ENTCAT = #{record.entcat,jdbcType=CHAR},
+      OPEORG = #{record.opeorg,jdbcType=VARCHAR},
+      OPEDEP = #{record.opedep,jdbcType=VARCHAR},
+      BJSJ = #{record.bjsj,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <sql id="OracleDialectPrefix" >
+    <if test="page != null" >
+      select * from ( select row_.*, rownum rownum_ from ( 
+    </if>
+  </sql>
+  <sql id="OracleDialectSuffix" >
+    <if test="page != null" >
+      <![CDATA[ ) row_   where rownum <= #{page.end} ) where rownum_ > #{page.begin} ]]>
+    </if>
+  </sql>
+  <select id="selectXbwqData" resultType="java.util.Map" >
+	select t.infotype,count(case when  to_char(t.regtime,'yyyy-MM-dd') = to_char(sysdate,'yyyy-MM-dd') then 1 else null end) jrdj,
+		count(case when  to_char(t.regtime,'yyyy-MM-dd') = to_char(sysdate-1,'yyyy-MM-dd') then 1 else null end) zrdj,
+		count(case when  to_char(t.bjsj,'yyyy-MM-dd') = to_char(sysdate,'yyyy-MM-dd') then 1 else null end) jrbj,
+		count(case when  to_char(t.bjsj,'yyyy-MM-dd') = to_char(sysdate-1,'yyyy-MM-dd') then 1 else null end) zrbj
+	from ai_12315_djxx t group by t.infotype
+  </select>
+  <select id="selectXfwqzlData" parameterType="map" resultType="java.util.Map" >
+	select infotype as name, count(*) as count,
+		count(case when t.istocase = '1' then 1 else null end) sza
+	  from ai_12315_djxx t
+	 where 
+	 <if test="type=='bq'">
+	 	to_char(t.regtime, 'YYYY-MM-DD') &gt;= to_char(sysdate, 'YYYY')||'-01-01'
+	 	and to_char(t.regtime, 'YYYY-MM-DD') &lt;= to_char(sysdate, 'YYYY-MM-DD')
+	 </if>
+	 <if test="type=='tq'">
+	 	to_char(t.regtime, 'YYYY-MM-DD') &gt;= to_char(ADD_MONTHS(sysdate,-12), 'YYYY')||'-01-01'
+	 	and to_char(t.regtime, 'YYYY-MM-DD') &lt;= to_char(ADD_MONTHS(sysdate,-12), 'YYYY-MM-DD')
+	 </if>
+	 group by infotype
+  </select>
+  <select id="selectTswtfxDlData" parameterType="map" resultType="java.lang.Integer" >
+	select count(1) as value
+	 from ai_12315_djxx t
+	 where t.infotype = '1' 
+	 and to_char(t.regtime,'yyyy') = to_char(sysdate,'yyyy')
+	 and t.OBTYPE is not null 
+	 <if test="type=='sp'">
+	 and substr(t.OBTYPE,0,1) = '1'
+	 </if>
+	 <if test="type=='fw'">
+	 and substr(t.OBTYPE,0,1) = '2'
+	 </if>
+	 order by substr(t.OBTYPE,0,1) asc
+  </select>
+  <select id="selectTswtfxXlData" parameterType="map" resultType="java.util.Map" >
+  	select name as "name",value as "value" from(
+	select (select item_name from pub_dict_item where dic_type = 'OBTYPE' and item_value = (substr(t.OBTYPE,0,4)||'0000')) as name,
+	       count(1) as value
+	 from ai_12315_djxx t
+	 where t.infotype = '1' 
+	 and to_char(t.regtime,'yyyy') = to_char(sysdate,'yyyy')
+	 and t.OBTYPE is not null
+	 <if test="type=='sp'">
+	 and substr(t.OBTYPE,0,1) = '1'
+	 </if>
+	 <if test="type=='fw'">
+	 and substr(t.OBTYPE,0,1) = '2'
+	 </if>
+	 group by substr(t.OBTYPE,0,4)
+	 order by count(1) desc)
+	 where name is not null 
+	 order by value desc
+  </select>
+  <select id="selectGqtsjbfxData" parameterType="map" resultType="java.util.Map" >
+  	select organ.organ_name as name,(case when djxx.value is null then 0 else djxx.value end) as value from 
+	(select organ_code,organ_name
+	  from pub_organ 
+	 where organ_code like '3709%' and length(organ_code)='6') organ
+	left join 
+	(select regorg, count(*) value
+	  from ai_12315_djxx
+	 where to_char(regtime, 'yyyy') = to_char(sysdate, 'yyyy')
+	 	<if test="infotype=='ts'">
+	   		and infotype = '1'
+	 	</if>
+	 	<if test="infotype=='jb'">
+	   		and infotype = '2'
+	 	</if>
+	 group by regorg) djxx on organ.organ_code = djxx.regorg order by value desc
+  </select>
+  <select id="selectJbwtfxData" parameterType="map" resultType="java.util.Map" >
+  	select name as "name",value as "value" from(
+	select (select item_name from pub_dict_item where dic_type = 'REPORTBASQUE' and item_value = substr(t.REPORTBASQUE,0,2)) as name,
+	       count(1) as value
+	 from ai_12315_djxx t
+	 where t.infotype = '2' 
+	 and to_char(t.regtime,'yyyy') = to_char(sysdate,'yyyy')
+	 and t.REPORTBASQUE is not null 
+	 group by substr(t.REPORTBASQUE,0,2)
+   order by substr(t.REPORTBASQUE,0,2) asc)
+   where name is not null
+  </select>
+  <select id="selectJbwtfxZtData" parameterType="map" resultType="java.util.Map" >
+  	select count(1) as "slsl",
+	  count(case when t.status = '7' then 1 else null end) as "jasl",
+	  count(case when 1=1 then (select 1 from ai_12315_ajxx ajxx where ajxx.regino = t.regino and ajxx.isfi = '1') else null end) as "lasl"
+	from ai_12315_djxx t 
+	where t.infotype = '2'
+	and to_char(t.regtime,'yyyy') = to_char(sysdate,'yyyy')
+  </select>
+</mapper>
