@@ -1165,7 +1165,7 @@
 		count(case when  to_char(t.regtime,'yyyy-MM-dd') = to_char(sysdate-1,'yyyy-MM-dd') then 1 else null end) zrdj,
 		count(case when  to_char(t.bjsj,'yyyy-MM-dd') = to_char(sysdate,'yyyy-MM-dd') then 1 else null end) jrbj,
 		count(case when  to_char(t.bjsj,'yyyy-MM-dd') = to_char(sysdate-1,'yyyy-MM-dd') then 1 else null end) zrbj
-	from ai_12315_djxx t group by t.infotype
+	from view_ai_12315_djxx t group by t.infotype
   </select>
   <select id="selectXfwqzlData" parameterType="map" resultType="java.util.Map" >
 	select infotype as name, count(*) as count,
