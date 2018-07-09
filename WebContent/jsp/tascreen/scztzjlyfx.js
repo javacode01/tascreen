@@ -1,5 +1,5 @@
 //市场主体资金来源（国内）分析controller
-indexApp.controller("scztzjlyfxCtrl",['$scope','ChartService','$window',function($scope,ChartService,$window){
+indexApp.controller("scztzjlyfxCtrl",['$scope','ChartService','$window','$interval',function($scope,ChartService,$window,$interval){
 	var w = angular.element($window);
     w.bind('resize', function(){
 	    console.log("捕获屏幕大小改变时间============="+new Date());
@@ -78,7 +78,7 @@ indexApp.controller("scztzjlyfxCtrl",['$scope','ChartService','$window',function
 		    ],
 		    series : [
 		        {
-		            name:'数量',
+		            name:'金额',
 		            type:'bar',
 		            itemStyle:{//定义图形样式
 		            	normal: {
@@ -125,35 +125,44 @@ indexApp.controller("scztzjlyfxCtrl",['$scope','ChartService','$window',function
     	$scope.tzjephTableData1 = data.result.result1;
     	$scope.tzjephTableData2 = data.result.result2;
     });
-    /************************投资行业分析*************************/
-//    var tzhyfxOption = {
-//			tooltip : {
-//				trigger : 'item',
-//				formatter : "{a} <br/>{b} : {c} (占比：{d}% )"
-//			},
-//			series : [ {
-//				name : '元',
-//				type : 'pie',
-//				radius : '60%',
-//				center : ['50%','50%'],
-//				data : [],
-//				label:{position:'inside'},
-//				itemStyle : {
-//					normal : {
-//						color : function(params) {
-//							return colorList[params.dataIndex];
-//						}
-//					}
-//				},
-//			} ]
-//		};
-//	var tzhyfxChart = ChartService.init("tzhyfx",tzhyfxOption);
-//	ChartService.setData('scztzjlyfx/getTzhyfxData',function(data){
-//    	console.log("投资行业分析："+JSON.stringify(data));
-//    	tzhyfxChart.setOption({
-//			series:[{
-//				data:data.result
-//			}]
-//		});
-//    });
+    //启动定时任务，切换显示金额和数量
+    $scope.title = "金额";
+    var type = 'je';
+    $scope.timer = $interval(function(){
+    	var url1 = '';
+    	var url2 = '';
+    	var title = '';
+    	if('je'==type){
+    		type = 'sl';
+    		title = "数量";
+    		tzjephOption.title.text = '单位：户';
+    		tzjephOption.series[0].name = '户数';
+    		url1 = 'scztzjlyfx/getTzjephhsData';
+    		url2 = 'scztzjlyfx/getTzjephhsTableData';
+    	}else{
+    		type = 'je';
+    		title = "金额";
+    		tzjephOption.title.text = '单位：万元';
+    		tzjephOption.series[0].name = '金额';
+    		url1 = 'scztzjlyfx/getTzjephData';
+    		url2 = 'scztzjlyfx/getTzjephTableData';
+    	}
+    	ChartService.setData(url1,function(data){
+    		tzjephChart.clear();
+    		tzjephOption.xAxis[0].data = data.result.x_value;
+    		tzjephOption.series[0].data = data.result.y_value;
+    		tzjephChart.setOption(tzjephOption);
+        });
+    	ChartService.setData(url2,function(data){
+    		$scope.title = title;
+    		$scope.tzjephTableData1 = data.result.result1;
+        	$scope.tzjephTableData2 = data.result.result2;
+        });
+    },10000);
+    //当DOM结构发生变化时，会执行on方法，监听路由切换时间。当DOM结构发生变化时，会执行 on方法
+    $scope.$on('destroy',function(){
+    	debugger;
+    	console.log("页面切换，注销定时任务");
+    	$interval.cancel($scope.timer);
+	});
 }]);

@@ -53,7 +53,7 @@
 							<tr>
 								<td style="width:33%;">序号</td>
 								<td style="width:33%;">省份</td>
-								<td style="width:33%;">金额</td>
+								<td style="width:33%;">{{title}}</td>
 					      	</tr>
 					      	<tr ng-repeat="data in tzjephTableData1">
 						      	<td>{{data.seq}}</td>
@@ -69,7 +69,7 @@
 							<tr>
 								<td style="width:33%;">序号</td>
 								<td style="width:33%;">省份</td>
-								<td style="width:33%;">金额</td>
+								<td style="width:33%;">{{title}}</td>
 					      	</tr>
 					      	<tr ng-repeat="data in tzjephTableData2">
 						      	<td>{{data.seq}}</td>

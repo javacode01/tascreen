@@ -76,4 +76,8 @@ public interface ZtdjJbxxZsMapper {
 
 	List<Map<String, Object>> selectTzjephjwData();
 
+	List<Map<String, Object>> selectTzjephjwhsData();
+
+	List<Map<String, Object>> selectTzjephhsData();
+
 }

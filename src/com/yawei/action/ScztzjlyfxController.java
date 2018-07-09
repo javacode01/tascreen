@@ -137,4 +137,48 @@ public class ScztzjlyfxController {
 		}
 		return rd;
 	}
+	
+	/**
+	 * 获取投资户数排行数据
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value="/scztzjlyfx/getTzjephhsData",method=RequestMethod.GET,produces="application/json")
+	public ResultData getTzjephhsData(HttpServletRequest request, HttpServletResponse response) {
+		ResultData rd = new ResultData();
+		try {
+			Map<String,Object> result = scztzjlyfxService.getTzjephhsData();
+			rd.setCode(Const.SUCCESS);
+			rd.setResult(result);
+		}catch(Exception e) {
+			e.printStackTrace();
+			logger.error(e);
+			rd.setCode(Const.SYS_ERROR);
+			rd.setResult(Const.SYS_ERROR_DESCRIPTION);
+		}
+		return rd;
+	}
+	
+	/**
+	 * 获取投资户数排行表格数据
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value="/scztzjlyfx/getTzjephhsTableData",method=RequestMethod.GET,produces="application/json")
+	public ResultData getTzjephhsTableData(HttpServletRequest request, HttpServletResponse response) {
+		ResultData rd = new ResultData();
+		try {
+			Map<String,Object> result = scztzjlyfxService.getTzjephhsTableData();
+			rd.setCode(Const.SUCCESS);
+			rd.setResult(result);
+		}catch(Exception e) {
+			e.printStackTrace();
+			logger.error(e);
+			rd.setCode(Const.SYS_ERROR);
+			rd.setResult(Const.SYS_ERROR_DESCRIPTION);
+		}
+		return rd;
+	}
 }

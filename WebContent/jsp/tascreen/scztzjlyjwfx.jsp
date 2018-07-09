@@ -53,7 +53,7 @@
 							<tr>
 								<td style="width:20%;">序号</td>
 								<td style="width:55%;">国家</td>
-								<td style="width:25%;">金额</td>
+								<td style="width:25%;">{{title}}</td>
 					      	</tr>
 					      	<tr ng-repeat="data in jwtzphTableData1">
 						      	<td>{{data.seq}}</td>
@@ -69,7 +69,7 @@
 							<tr>
 								<td style="width:20%;">序号</td>
 								<td style="width:55%;">国家</td>
-								<td style="width:25%;">金额</td>
+								<td style="width:25%;">{{title}}</td>
 					      	</tr>
 					      	<tr ng-repeat="data in jwtzphTableData2">
 						      	<td>{{data.seq}}</td>

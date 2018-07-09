@@ -1,5 +1,5 @@
 //市场主体资金来源（境外）分析controller
-indexApp.controller("scztzjlyjwfxCtrl",['$scope','ChartService','$window',function($scope,ChartService,$window){
+indexApp.controller("scztzjlyjwfxCtrl",['$scope','ChartService','$window','$interval',function($scope,ChartService,$window,$interval){
 	var w = angular.element($window);
     w.bind('resize', function(){
 	    console.log("捕获屏幕大小改变时间============="+new Date());
@@ -78,7 +78,7 @@ indexApp.controller("scztzjlyjwfxCtrl",['$scope','ChartService','$window',functi
 		    ],
 		    series : [
 		        {
-		            name:'数量',
+		            name:'金额',
 		            type:'bar',
 		            itemStyle:{//定义图形样式
 		            	normal: {
@@ -125,4 +125,43 @@ indexApp.controller("scztzjlyjwfxCtrl",['$scope','ChartService','$window',functi
     	$scope.jwtzphTableData1 = data.result.result1;
     	$scope.jwtzphTableData2 = data.result.result2;
     });
+    //启动定时任务，切换显示金额和数量
+    $scope.title = "金额";
+    var type = 'je';
+    $scope.timer = $interval(function(){
+    	var url1 = '';
+    	var url2 = '';
+    	var title = '';
+    	if('je'==type){
+    		type = 'sl';
+    		title = "数量";
+    		jwtzphOption.title.text = '单位：户';
+    		jwtzphOption.series[0].name = '户数';
+    		url1 = 'scztzjlyjwfx/getJwtzphhsData';
+    		url2 = 'scztzjlyjwfx/getJwtzphhsTableData';
+    	}else{
+    		type = 'je';
+    		title = "金额";
+    		jwtzphOption.title.text = '单位：万美元';
+    		jwtzphOption.series[0].name = '金额';
+    		url1 = 'scztzjlyjwfx/getJwtzphData';
+    		url2 = 'scztzjlyjwfx/getJwtzphTableData';
+    	}
+    	ChartService.setData(url1,function(data){
+    		jwtzphChart.clear();
+    		jwtzphOption.xAxis[0].data = data.result.x_value;
+    		jwtzphOption.series[0].data = data.result.y_value;
+        	jwtzphChart.setOption(jwtzphOption);
+        });
+    	ChartService.setData(url2,function(data){
+    		$scope.title = title;
+        	$scope.jwtzphTableData1 = data.result.result1;
+        	$scope.jwtzphTableData2 = data.result.result2;
+        });
+    },10000);
+    //当DOM结构发生变化时，会执行on方法，监听路由切换时间。当DOM结构发生变化时，会执行 on方法
+    $scope.$on('destroy',function(){
+    	console.log("页面切换，注销定时任务");
+    	$interval.cancel($scope.timer);
+	});
 }]);

@@ -89,5 +89,55 @@ public class ScztzjlyjwfxService {
 		}
 		return result;
 	}
+	
+	/**
+	 * 获取户数排行数据
+	 * @return
+	 */
+	public Map<String, Object> getTzjephjwhsData() {
+		// TODO Auto-generated method stub
+		Map<String,Object> result = new HashMap<String,Object>();
+		List<Map<String,Object>> list = ztdjJbxxZsMapper.selectTzjephjwhsData();
+		List<String> x_value = new ArrayList<String>();
+		List<BigDecimal> y_value = new ArrayList<BigDecimal>();
+		for(int i=0;i<list.size()&&i<9;i++) {
+			Map<String,Object> temp = list.get(i);
+			x_value.add((String) temp.get("NAME"));
+			y_value.add(((BigDecimal) temp.get("VALUE")).setScale(0,BigDecimal.ROUND_HALF_UP));
+		}
+		result.put("x_value", x_value);
+		result.put("y_value", y_value);
+		return result;
+	}
+	
+	/**
+	 * 获取投资户数
+	 * @return
+	 */
+	public Map<String, Object> getTzjephhsTableData() {
+		// TODO Auto-generated method stub
+		Map<String, Object> result = new HashMap<String,Object>();
+		List<Map<String,Object>> result1 = new ArrayList<Map<String,Object>>();
+		List<Map<String,Object>> result2 = new ArrayList<Map<String,Object>>();
+		List<Map<String,Object>> list = ztdjJbxxZsMapper.selectTzjephjwhsData();
+		int i=1;
+		for(Map<String,Object> temp:list) {
+			Map<String,Object> tempResult = new HashMap<String,Object>();
+			tempResult.put("name", (String) temp.get("NAME"));
+			tempResult.put("value", ((BigDecimal) temp.get("VALUE")).setScale(0,BigDecimal.ROUND_HALF_UP));
+			tempResult.put("seq",i+"");
+			if(i<=10) {
+				result1.add(tempResult);
+			}else if(i>10&&i<=20) {
+				result2.add(tempResult);
+			}else {
+				break;
+			}
+			i++;
+		}
+		result.put("result1", result1);
+		result.put("result2", result2);
+		return result;
+	}
 
 }
