@@ -47,16 +47,16 @@
 			<div class="page-box">
 				<div class="page-box-title-left">{{nbnd}}年度全市年报情况</div>
 				<div id="ndqsnbqk" style="height:100%;color:#00E1FC;padding-top:6%;">
-					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:16px;font-weight:bold;background:url(resource/img/scztnbzj/nb_gt.png) no-repeat;background-size: auto 100%;">
-						企业<br/>{{(ndqsnbqkData.qyyb/(ndqsnbqkData.qyyb+ndqsnbqkData.qywb)*100)|number:0}}%
+					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:14px;font-weight:bold;background:url(resource/img/scztnbzj/nb_gt.png) no-repeat;background-size: auto 100%;">
+						企业<br/>{{(ndqsnbqkData.qyyb/(ndqsnbqkData.qyyb+ndqsnbqkData.qywb)*100)|number:1}}%
 					</div>
 					<div style="display:inline-block;"><font color="#06EDF7" style="font-size:16px;font-weight:bold;">应报{{ndqsnbqkData.qyyb+ndqsnbqkData.qywb}}户</font><br/><font color="#FF6C0D" style="font-size:16px;font-weight:bold;">已报{{ndqsnbqkData.qyyb}}户</font></div>
-					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:16px;font-weight:bold;background:url(resource/img/scztnbzj/nb_nh.png) no-repeat;background-size: auto 100%;">
-						农合<br/>{{(ndqsnbqkData.nhyb/(ndqsnbqkData.nhyb+ndqsnbqkData.nhwb)*100)|number:0}}%
+					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:14px;font-weight:bold;background:url(resource/img/scztnbzj/nb_nh.png) no-repeat;background-size: auto 100%;">
+						农合<br/>{{(ndqsnbqkData.nhyb/(ndqsnbqkData.nhyb+ndqsnbqkData.nhwb)*100)|number:1}}%
 					</div>
 					<div style="display:inline-block;"><font color="#06EDF7" style="font-size:16px;font-weight:bold;">应报{{ndqsnbqkData.nhyb+ndqsnbqkData.nhwb}}户</font><br/><font color="#FF6C0D" style="font-size:16px;font-weight:bold;">已报{{ndqsnbqkData.nhyb}}户</font></div>
-					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:16px;font-weight:bold;background:url(resource/img/scztnbzj/nb_qy.png) no-repeat;background-size: auto 100%;">
-						个体<br/>{{(ndqsnbqkData.gtyb/(ndqsnbqkData.gtyb+ndqsnbqkData.gtwb)*100)|number:0}}%
+					<div class="ndqsnbqk" style="height:29%;width:65%;font-size:14px;font-weight:bold;background:url(resource/img/scztnbzj/nb_qy.png) no-repeat;background-size: auto 100%;">
+						个体<br/>{{(ndqsnbqkData.gtyb/(ndqsnbqkData.gtyb+ndqsnbqkData.gtwb)*100)|number:1}}%
 					</div>
 					<div style="display:inline-block;"><font color="#06EDF7" style="font-size:16px;font-weight:bold;">应报{{ndqsnbqkData.gtyb+ndqsnbqkData.gtwb}}户</font><br/><font color="#FF6C0D" style="font-size:16px;font-weight:bold;">已报{{ndqsnbqkData.gtyb}}户</font></div>
 				</div>
