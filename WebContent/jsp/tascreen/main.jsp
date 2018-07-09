@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="container-fluid" style="height:100%;min-height:768px;">
-	<div class="row" style="margin-bottom:20px;height:10%;margin-top:10%;">
+	<div class="row" style="margin-bottom:2%;height:10%;margin-top:7%;">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-10" style="height:100%;">
 			<img src="resource/img/main/title.png" style="height:100%;">
