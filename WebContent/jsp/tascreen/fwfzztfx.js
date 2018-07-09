@@ -34,7 +34,7 @@ indexApp.controller("fwfzztfxCtrl",['$scope','ChartService','$window',function($
             		normal:{
             			show:true,
             			textStyle:{
-            				color:'#FFFFFF'
+            				color:'#000000'
             			}
             		}
     	        },
