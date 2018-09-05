@@ -83,7 +83,7 @@ indexApp.controller("sxjjfzfxCtrl",['$scope','ChartService','$window',function($
     		            	shadowOffsetY:6
     	                }
     	            },
-    	            data:[100,150,200,250,100,150,300,190,200]
+    	            data:[519,270,5680,3269,7690,5612,4390,4126,3579]
     	        },
     	        {
     	            name:'新产业企业',
@@ -98,7 +98,7 @@ indexApp.controller("sxjjfzfxCtrl",['$scope','ChartService','$window',function($
     		            	shadowOffsetY:6
     	                }
     	            },
-    	            data:[50,90,100,200,150,50,90,200,150]
+    	            data:[492,216,5612,5001,5916,4929,3926,4679,5915]
     	        },
     	        {
     	            name:'新业态企业',
@@ -123,7 +123,7 @@ indexApp.controller("sxjjfzfxCtrl",['$scope','ChartService','$window',function($
     	                    }
     	                }
     	            },
-    	            data:[500,300,200,400,600,100,400,500,600]
+    	            data:[216,389,5901,4678,5161,3798,4891,5891,5108]
     	        },
     	        {
     	            name:'新模式企业',
@@ -148,7 +148,7 @@ indexApp.controller("sxjjfzfxCtrl",['$scope','ChartService','$window',function($
     	                    }
     	                }
     	            },
-    	            data:[300,350,290,400,350,500,450,300,200]
+    	            data:[271,191,4716,3981,4901,2769,3179,3616,3196]
     	        }
     	    ]
     };
@@ -225,22 +225,22 @@ indexApp.controller("sxjjfzfxCtrl",['$scope','ChartService','$window',function($
     	        {	
     	        	name:'新技术企业',
     	            type:'line',
-    	            data:[50,60,70,80,90,100,110,120,130,140,150]
+    	            data:[7019,7910,8190,9061,10129,12612,15509,18006,19601,25509,27506]
     	        },
     	        {
     	        	name:'新业态企业',
     	            type:'line',
-    	            data:[50,70,90,100,120,150,170,190,210,230,250]
+    	            data:[5996,6510,7015,7591,7810,8019,8569,8910,9106,9790,10938]
     	        },
     	        {
     	        	name:'新产业企业',
     	            type:'line',
-    	            data:[60,80,120,140,160,180,200,220,240,260,280]
+    	            data:[5691,7019,7910,8190,9761,10269,12089,14509,15071,16079,18961]
     	        },
     	        {
     	        	name:'新模式企业',
     	            type:'line',
-    	            data:[60,90,130,150,180,210,240,260,280,300,330]
+    	            data:[4032,6109,7590,8016,8765,9549,10969,11561,12649,13210,15269]
     	        }
     	    ]
     	};

@@ -25,23 +25,23 @@
 					<img src="resource/img/sxjjfzfx/sxjj.png" style="position:absolute;top:20%;left:16%;width:70%;">
 					<div class="ssjj_detail" style="top:16%;left:16%;">
 						<div style="font-size:20px;font-weight: bold;margin-bottom: 6px;">新&nbsp;技&nbsp;术</div>
-						<div>54321户</div>
-						<div style="color:#0076C0;">2000000元</div>
+						<div>27506户</div>
+						<div style="color:#0076C0;">2156.12万元</div>
 					</div>
 					<div class="ssjj_detail" style="top:26%;left:75%;">
 						<div style="font-size:20px;font-weight: bold;margin-bottom: 6px;">新&nbsp;产&nbsp;业</div>
-						<div>54321户</div>
-						<div style="color:#0076C0;">2000000元</div>
+						<div>18961户</div>
+						<div style="color:#0076C0;">1762.10万元</div>
 					</div>
 					<div class="ssjj_detail" style="top:70%;left:80%;">
 						<div style="font-size:20px;font-weight: bold;margin-bottom: 6px;">新&nbsp;模&nbsp;式</div>
-						<div>54321户</div>
-						<div style="color:#0076C0;">2000000元</div>
+						<div>15269户</div>
+						<div style="color:#0076C0;">1919.92万元</div>
 					</div>
 					<div class="ssjj_detail" style="top:69%;left:9%;">
 						<div style="font-size:20px;font-weight: bold;margin-bottom: 6px;">新&nbsp;业&nbsp;态</div>
-						<div>54321户</div>
-						<div style="color:#0076C0;">2000000元</div>
+						<div>10938户</div>
+						<div style="color:#0076C0;">1028.69万元</div>
 					</div>
 				</div>
 			</div>
