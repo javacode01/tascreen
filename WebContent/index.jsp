@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>泰安大屏</title>
+    <title>泰安市场监管数据展示平台</title>
     <link rel="stylesheet" href="${basepath}resource/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="${basepath}resource/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="${basepath}resource/css/tascreen.css">

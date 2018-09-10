@@ -5,7 +5,7 @@
 		<div class="col-lg-2">
 		</div>
 		<div class="col-lg-8 page-title">
-			工商业务实时监控
+			登记业务实时监控
 		</div>
 		<div class="col-lg-2">
 		</div>

@@ -14,7 +14,7 @@
 				<div style="margin-bottom:29px;">
 					<img src="resource/img/main/2.png" height="50px">
 				</div>
-				<div class="main-font">工商业务实时监控</div>
+				<div class="main-font">登记业务实时监控</div>
 			</div>
 		</div>
 		<div class="col-lg-2 main-module">
