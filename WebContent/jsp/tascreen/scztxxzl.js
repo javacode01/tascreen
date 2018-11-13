@@ -60,7 +60,7 @@ indexApp.controller("scztxxzlCtrl",['$scope','ChartService','$window',function($
     var ztzzqsOption = {
     		color: ['#00E1FC'],
     		grid: {
-    			top:'10%',
+    			top: '20%',
 		        left: '5%',
 		        right: '4%',
 		        bottom: '3%',
